@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+body{/* Cuerpo de fondo */
+    background-color: rgb(21, 22, 22);
+}
+.men{/* Divido la pantalla en columnas, borde, tamaño, va el contenido*/
+    display: grid;
+    border: 1px solid rgb(71, 161, 86);
+    overflow-wrap: break-word;
+    grid-template-columns: 1fr 3fr 1fr;
+    position: relative;
+    background-image: url(https://www.anipedia.net/images/gifs-peces.gif);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-size: 33.75px 37.5px;
+    animation: dr 15s steps(50) infinite;
+}
+
+h1{/* Titulo */
+    display: grid;
+    place-content: center;
+    font-size: 5vw;
+    background-image: linear-gradient(to right, #ff0000, #001aff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+ol{/* Parte de la lista */
+    display: grid;
+    background-image: url(https://www.gifsanimados.org/data/media/158/beisbol-imagen-animada-0079.gif);
+    background-repeat: no-repeat;
+    background-color: rgb(76, 154, 221);
+    border: 2px solid red;
+    overflow-wrap: break-word;
+    height: 25vw;
+}
+li{/* Color de la lista */
+    color: rgb(162, 0, 226);
+    font-size: 2vw;
+    height: 2vh;
+}
+p{/* Color de la letra lista  */
+    color: rgb(233, 221, 221);
+    height: 1.6vw;
+}
+
+.io{/* sprite */
+    width: auto;
+    animation: sprite 2s steps(10) infinite;
+    background-position-x: right;
+    background-position-y: center;
+    background-size: 35px;
+    
+}/* Anima el sprite */
+@keyframes sprite {
+    0%{
+        background-position-x: 140;
+    }
+    100%{
+        background-position-x: -800px;
+    }
+}
+@keyframes dr {
+    0%{
+        background-position-x: 96vw;
+    }
+    100%{
+        background-position-x: -96vw;
+    }
+}
+button{
+    background-color: rgb(57, 201, 206);
+    font-style: italic;
+    font-size: 2vw;
+    cursor: pointer;
+    overflow-wrap: break-word;
+    border: 2px solid rgb(218, 46, 46);
+    border-radius: 55%;
+    height: 3vw;
+    width: 3vw;
+}
+.im{
+    display: grid;
+    /* transform: rotate(0deg); rotar imagen */
+}
