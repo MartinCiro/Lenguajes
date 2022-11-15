@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tabla MySQL y sqlite3</title>
+</head>
+<body>
+    <h1>Comandos probados de MySQL y sqlite3</h1>
+    <table border=".1vw">
+
+        <tr style="display: grid; grid-template-columns: 22% 78%;">
+            <th>Registros (filas)⬇️<br>Campos (columnas)➡️</th>
+            <th>Comando</th>
+        </tr>
+        <tr style="color: red;">
+        <!--Inserto los titulos de la tabla-->
+        <th>Funcion</th>
+        <th>MySQL</th>
+        <th>Sqlite3</th>
+        </tr>
+
+        <tr>        
+        <!-- <td><p>&nbsp;</p></td> -->
+        <td class="fn"><p>Crear un usuario:</p></td>
+        <td><p>create user nombreusuario@host identified by 'pass';</p></td>
+        <td><p>No aplica.</p></td>
+        </tr>
+        
+        <tr>
+        <td class="fn"><p>Asignacion de permisos:</p></td>
+        <td><p>grant all privileges *.* to 'user'@'host';</p></td>
+        <td><p>No aplica.</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Listar bases existentes:</p></td>
+            <td><p>show databases;</p></td>
+            <td><p>Comando "ls" en directorio a traves de terminal</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Crear Base:</p></td>
+            <td><p>create database nombrebase;</p></td>
+            <td><p>sqlite3 agenda.db (inicia con la base)</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Usar base:</p></td>
+            <td><p>use nombrebase;</p></td>
+            <td><p>No necesario, usar 👆</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Ver Nombre Columna:</p></td>
+            <td><p>Automatico.</p></td>
+            <td><p>.header on</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Ver Filas con espaciado:</p></td>
+            <td><p>Automatico.</p></td>
+            <td><p>.mode column</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Crear tabla:</p></td>
+            <td><p>create table NomTabla (NomCampo Tipo(AnchoMaximo), Nom2 Tipo2(AnchoMaximo));</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Ver campos de la tabla:</p></td>
+            <td><p>describe NomTabla;</p></td>
+            <td><p>.schema NomTabla</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Ver tablas existentes</p></td>
+            <td><p>show full tables from NomBase;</p></td>
+            <td><p>select * from sqlite_master where type = "table";</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Insertar datos en Tabla</p></td>
+            <td><p>insert into nombretabla values ('fila1','fila2'), ('fila1','fila2'));</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Consultar datos en tabla</p></td>
+            <td><p>select * from Tabla;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Limitar consultar datos en tabla</p></td>
+            <td><p>select * from NomTabla limit NumLim;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Importar Datos</p></td>
+            <td><p>load data infile 'SepararRutaConDosBarras' into table NombreTable;</p></td>
+            <td><p></p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+        </tr>
+    </table>
+</body>
+👈 Igual
+</html>

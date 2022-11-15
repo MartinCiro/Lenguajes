@@ -1,0 +1,28 @@
+body{
+    background-color: aliceblue;
+}
+h1{
+    font-size: 3.5vw;
+    text-align: center;
+}
+
+table{
+    width: 100%;
+}
+th, td {
+    font-size: 2vw;
+}
+tr{
+    display: grid;
+    text-align: center;
+    padding: 0;
+    grid-template-columns: 22% 39% 39%;
+    background-color: aqua;
+    object-fit: cover;
+}
+.fn{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+p{
+    text-align: center;
+}
