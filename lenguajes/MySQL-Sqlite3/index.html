@@ -25,15 +25,15 @@
 
         <tr>        
         <!-- <td><p>&nbsp;</p></td> -->
-        <td class="fn"><p>Crear un usuario:</p></td>
-        <td><p>create user nombreusuario@host identified by 'pass';</p></td>
-        <td><p>No aplica.</p></td>
+            <td class="fn"><p>Crear un usuario:</p></td>
+            <td><p>create user nombreusuario@host identified by 'pass';</p></td>
+            <td><p>No aplica.</p></td>
         </tr>
         
         <tr>
-        <td class="fn"><p>Asignacion de permisos:</p></td>
-        <td><p>grant all privileges *.* to 'user'@'host';</p></td>
-        <td><p>No aplica.</p></td>
+            <td class="fn"><p>Asignacion de permisos:</p></td>
+            <td><p>grant all privileges *.* to 'user'@'host';</p></td>
+            <td><p>No aplica.</p></td>
         </tr>
 
         <tr>
@@ -51,7 +51,7 @@
         <tr>
             <td class="fn"><p>Usar base:</p></td>
             <td><p>use nombrebase;</p></td>
-            <td><p>No necesario, usar 👆</p></td>
+            <td><p>.open NomBase o usar 👆</p></td>
         </tr>
 
         <tr>
@@ -105,6 +105,60 @@
         <tr>
             <td class="fn"><p>Importar Datos</p></td>
             <td><p>load data infile 'SepararRutaConDosBarras' into table NombreTable;</p></td>
+            <td><p>.mode csv | .import "RutaArch"</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Filtrar Datos <u>con</u> Repeticion</p></td>
+            <td><p>select NomColumna, NomColumna2 from Nomtabla order by NomCampo, NomCampo2</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Filtrar Datos <u>sin</u> Repeticion </p></td>
+            <td><p>select <u>distint</u> NomColumna... 👆</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Filtrar Ascendente</p></td>
+            <td><p>select NomColumna, NomColumna2 from Nomtabla order by NomCampo asc;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Filtrar Descendente</p></td>
+            <td><p>select NomColumna, NomColumna2 from Nomtabla order by NomCampo desc;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
             <td><p></p></td>
         </tr>
 
