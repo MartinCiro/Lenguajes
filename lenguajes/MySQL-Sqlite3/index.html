@@ -91,8 +91,32 @@
         </tr>
 
         <tr>
+            <td class="fn"><p>Eliminar los registros de una Tabla</p></td>
+            <td><p>delete from NomTabla;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Eliminar Tabla</p></td>
+            <td><p>drop table NomCampo;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Eliminar Base</p></td>
+            <td><p>drop database NomBase;</p></td>
+            <td><p>Eliminacion manual</p></td>
+        </tr>
+
+        <tr>
             <td class="fn"><p>Consultar datos en tabla</p></td>
             <td><p>select * from Tabla;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Consultar datos en tabla por Registro</p></td>
+            <td><p>select * from NomTabla where NomCampo='Filtro';</p></td>
             <td><p>👈 Igual</p></td>
         </tr>
 
@@ -116,7 +140,7 @@
 
         <tr>
             <td class="fn"><p>Filtrar Datos <u>sin</u> Repeticion </p></td>
-            <td><p>select <u>distint</u> NomColumna... 👆</p></td>
+            <td><p>select <u>distinct</u> NomColumna... 👆</p></td>
             <td><p>👈 Igual</p></td>
         </tr>
 
@@ -130,6 +154,90 @@
             <td class="fn"><p>Filtrar Descendente</p></td>
             <td><p>select NomColumna, NomColumna2 from Nomtabla order by NomCampo desc;</p></td>
             <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Contar coincidencias</p></td>
+            <td><p>select count(*) from NomTabla;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Contar sin Repetir</p></td>
+            <td><p>select count(distinct NomCampo) from NomTabla;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Contar con condicion</p></td>
+            <td><p>select count(*) from (select * from NomTabla where condicion) as ALIAS;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Contar Repeticiones en campo</p></td>
+            <td><p>seleccionar campo1, campo2, campoContar...<br>select campo1, campo2, count(*) from NomTabla group by campo1;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Numero-Nombre mayor</p></td>
+            <td><p>select max(NomCampo) from NomTabla;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Numero-Nombre menor</p></td>
+            <td><p>select min(NomCampo) from NomTabla;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Sumar campos</p></td>
+            <td><p>select sum(NomCampo) from NomTabla;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Sumar campos distintos</p></td>
+            <td><p>select sum(distinct NomCampo) from NomTabla;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Sumar Registros por campos</p></td>
+            <td><p>select NomCampo, sum(NomCampo) from NomTabla group by NomCampo;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Calcular el promedio por campos</p></td>
+            <td><p>select NomCampo, avg(NomCampo) from NomTabla group by NomCampo;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Modificar Registros</p></td>
+            <td><p>update NomTabla set NomCampo=VlrNuevo, NomCampo2=VlrNuevo;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Modificar Registro Especifico</p></td>
+            <td><p>update NomTabla set NomCampo=VlrNuevo where NomCampo='Filtro' and NomCampo2='Filtro';</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Eliminar Registro Especifico</p></td>
+            <td><p>delete from cursos where NomCampo='Filtro';</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
         </tr>
 
         <tr>
