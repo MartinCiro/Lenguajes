@@ -50,13 +50,13 @@
         
         <tr>
             <td class="fn"><p>Crear Base:</p></td>
-            <td><p>create database nombrebase;</p></td>
+            <td><p>create database NomBase;</p></td>
             <td><p>sqlite3 agenda.db (inicia con la base)</p></td>
         </tr>
 
         <tr>
             <td class="fn"><p>Usar base:</p></td>
-            <td><p>use nombrebase;</p></td>
+            <td><p>use NomBase;</p></td>
             <td><p>.open NomBase o usar 👆</p></td>
         </tr>
 
@@ -92,7 +92,7 @@
 
         <tr>
             <td class="fn"><p>Insertar datos en Tabla</p></td>
-            <td><p>insert into nombretabla values ('fila1','fila2'), ('fila1','fila2'));</p></td>
+            <td><p>insert into NomCampo values ('NomRegistro','NomRegistro2'), ('NomRegistro','NomRegistro2'));</p></td>
             <td><p>👈 Igual</p></td>
         </tr>
 
@@ -116,7 +116,7 @@
 
         <tr>
             <td class="fn"><p>Consultar datos en tabla</p></td>
-            <td><p>select * from Tabla;</p></td>
+            <td><p>select * from NomTabla;</p></td>
             <td><p>👈 Igual</p></td>
         </tr>
 
@@ -134,14 +134,15 @@
 
         <tr>
             <td class="fn"><p>Importar Datos</p></td>
-            <td><p>load data infile 'SepararRutaConDosBarras' into table NombreTable;</p></td>
+            <td><p>load data infile 'SepararRutaConDosBarras' into table NomTabla;
+                <br><a href="https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client" target="_blank" rel="noopener noreferrer">Solo si error:</a> SET GLOBAL local_infile=1; | quit | mysql --local-infile=1 -u user -p | load data local infile '/path/InscripcionesMySQL.txt' into table Inscripciones;</p></td>
             <!-- load data infile '/home/ciro/Música/mySql/InscripcionesMySQL' Inscripciones; -->
             <td><p>.mode csv | .import 'RutaArch'</p></td>
         </tr>
 
         <tr>
             <td class="fn"><p>Filtrar Datos <u>con</u> Repeticion</p></td>
-            <td><p>select NomColumna, NomColumna2 from Nomtabla order by NomCampo, NomCampo2</p></td>
+            <td><p>select NomColumna, NomColumna2 from NomTabla order by NomCampo, NomCampo2</p></td>
             <td><p>👈 Igual</p></td>
         </tr>
 
@@ -153,13 +154,13 @@
 
         <tr>
             <td class="fn"><p>Filtrar Ascendente</p></td>
-            <td><p>select NomColumna, NomColumna2 from Nomtabla order by NomCampo asc;</p></td>
+            <td><p>select NomColumna, NomColumna2 from NomTabla order by NomCampo asc;</p></td>
             <td><p>👈 Igual</p></td>
         </tr>
 
         <tr>
             <td class="fn"><p>Filtrar Descendente</p></td>
-            <td><p>select NomColumna, NomColumna2 from Nomtabla order by NomCampo desc;</p></td>
+            <td><p>select NomColumna, NomColumna2 from NomTabla order by NomCampo desc;</p></td>
             <td><p>👈 Igual</p></td>
         </tr>
 
@@ -284,15 +285,52 @@
         </tr>
 
         <tr>
-            <td class="fn"><p></p></td>
-            <td><p></p></td>
-            <td><p></p></td>
+            <td class="fn"><p>Insertar registro en campo especifico</p></td>
+            <td><p>insert into NomTabla (NomCampo) values ('NomRegistroNuevo');</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Juntar tablas</p></td>
+            <td><p>select NomTabla.NomCampo, NomTabla2.NomCampo2 from NomTabla, NomTabla2;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Juntar tablas con condicion</p></td>
+            <td><p style="text-align: left;">...cuando la clave foranea apunte a la clave primaria del campo (que sea el mismo)...<br>select NomTabla.NomCampo, NomTabla2.NomCampo2 from NomTabla, NomTabla2 where NomTabla.NomCampo=NomTabla2.NomCampo2;<br>select Materias.Materia, Asignaturas.Asignatura from Materias, Asignaturas where Asignaturas.MateriaAsignatura=Materias.idMateria;
+            </p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Renombrar Registro</p></td>
+            <td><p>alter table NomTabla change NomCampo NomCampoNuevo TipoDato not null;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Renombrar Tabla</p></td>
+            <td><p>RENAME TABLE NomCampo TO NomCampoNuevo;</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Fecha actual</p></td>
+            <td><p>curdate()</p></td>
+            <td><p>('now')</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Retornar el ultimo ID generado</p></td>
+            <td><p>select last_insert_id();<br>insert into NomCampo values ('NomRegistro','NomRegistro2') values last_insert_id(),NumAlQueQuieroQuePertenezca);</p></td>
+            <td><p>👈 last_insert_rowid(),</p></td>
         </tr>
 
         <tr>
             <td class="fn"><p></p></td>
             <td><p></p></td>
-            <td><p></p></td>
+            <td><p>👈 Igual</p></td>
         </tr>
 
         <tr>
@@ -303,7 +341,6 @@
     </table>
     <a href="../source/SQL/TipeDate.pdf" target="_blank" rel="noopener noreferrer"><button>Tipos de datos</button></a>
     <p>Para las relaciones deben tener el mismo tipo de dato</p>
-    <p>Para limpiar pantalla hacemos uso de <strong>system clear;</strong></p>
 </body>
 👈 Igual
 </html>

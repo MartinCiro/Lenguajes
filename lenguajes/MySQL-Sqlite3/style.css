@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Sono:wght@600&display=swap');
 body{
     background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-boxs;
 }
 h1{
     font-size: 3.5vw;
@@ -24,7 +27,9 @@ tr{
 }
 .fn{
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #f7027d;
 }
 p{
     text-align: center;
+    overflow: hidden;
 }
