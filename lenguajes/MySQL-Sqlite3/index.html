@@ -23,6 +23,12 @@
         <th>Sqlite3</th>
         </tr>
 
+        <tr>
+            <td class="fn"><p>Limpiar pantalla</p></td>
+            <td><p>system clear;</p></td>
+            <td><p>.shell clear</p></td>
+        </tr>
+        
         <tr>        
         <!-- <td><p>&nbsp;</p></td> -->
             <td class="fn"><p>Crear un usuario:</p></td>
@@ -129,7 +135,8 @@
         <tr>
             <td class="fn"><p>Importar Datos</p></td>
             <td><p>load data infile 'SepararRutaConDosBarras' into table NombreTable;</p></td>
-            <td><p>.mode csv | .import "RutaArch"</p></td>
+            <!-- load data infile '/home/ciro/Música/mySql/InscripcionesMySQL' Inscripciones; -->
+            <td><p>.mode csv | .import 'RutaArch'</p></td>
         </tr>
 
         <tr>
@@ -235,27 +242,45 @@
         </tr>
 
         <tr>
-            <td class="fn"><p></p></td>
-            <td><p></p></td>
-            <td><p></p></td>
+            <td class="fn"><p>Agregar campo</p></td>
+            <td><p>alter table NomTabla add NomCampoNuevo TipoDato;</p></td>
+            <td><p>👈 Igual</p></td>
         </tr>
 
         <tr>
-            <td class="fn"><p></p></td>
-            <td><p></p></td>
-            <td><p></p></td>
+            <td class="fn"><p>Cambiar nombre</p></td>
+            <td><p>alter table NomCampo rename to NomCampoNuevo</p></td>
+            <td><p>👈 Igual</p></td>
         </tr>
 
         <tr>
-            <td class="fn"><p></p></td>
-            <td><p></p></td>
-            <td><p></p></td>
+            <td class="fn"><p>Crear tabla sino existe</p></td>
+            <td><p>create table if not exists NomTabla(campo1 TipoDato, campo2 TipoDato);</p></td>
+            <td><p>👈 Igual</p></td>
         </tr>
 
         <tr>
-            <td class="fn"><p></p></td>
-            <td><p></p></td>
-            <td><p></p></td>
+            <td class="fn"><p>Establecer llave primaria</p></td>
+            <td><p>Normalmente va al final de la creacion de tablas (por eso las tres parentesis)<br>...primary key());</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Establecer llave foranea</p></td>
+            <td><p>Normalmente va al final de la creacion de tablas (por eso las tres parentesis)<br>...foreign key(CampoDependiente) references NomTabla(NomCampo));</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Asociacion de campos</p></td>
+            <td><p>create table NomTabla (NomCampo TipoDato not null auto_increment, NomCampo2 TipoDato not null, primary key (NomCampo), foreign key(CampoDependiente) references NomTabla(NomCampo));</p></td>
+            <td><p>👈 Igual</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Valor unico (no se repite en la tabla)</p></td>
+            <td><p>create table NomTabla (NomCampo TipoDato not null auto_increment, NomCampo2 TipoDato not null unique, primary key (NomCampo), foreign key(CampoDependiente) references NomTabla(NomCampo));</p></td>
+            <td><p>👈 Igual</p></td>
         </tr>
 
         <tr>
@@ -277,6 +302,8 @@
         </tr>
     </table>
     <a href="../source/SQL/TipeDate.pdf" target="_blank" rel="noopener noreferrer"><button>Tipos de datos</button></a>
+    <p>Para las relaciones deben tener el mismo tipo de dato</p>
+    <p>Para limpiar pantalla hacemos uso de <strong>system clear;</strong></p>
 </body>
 👈 Igual
 </html>
