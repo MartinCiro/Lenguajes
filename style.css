@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 body{/* Cuerpo de fondo */
     background-color: rgb(21, 22, 22);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-boxs;
 }
 .men{/* Divido la pantalla en columnas, borde, tamaño, va el contenido*/
     display: grid;
@@ -78,6 +81,10 @@ button{
     border-radius: 55%;
     height: 3vw;
     width: 3vw;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-boxs;
 }
 .im{
     display: grid;
