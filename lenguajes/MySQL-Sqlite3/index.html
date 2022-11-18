@@ -77,6 +77,11 @@
             <td><p>create table NomTabla (NomCampo Tipo(AnchoMaximo), Nom2 Tipo2(AnchoMaximo));</p></td>
             <td><p>👈 Igual</p></td>
         </tr>
+        
+        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+            <td class="fn"><p>Cambiar Motor de base (estatica, Dinamica, Comprimida) MyISAM</p></td>
+            <td><img src="../source/SQL/img/TablasMyISAM.PNG" usemap="#TaMyISA"></td>
+        </tr>
 
         <tr>
             <td class="fn"><p>Ver campos de la tabla:</p></td>
@@ -327,6 +332,36 @@
             <td><p>👈 last_insert_rowid(),</p></td>
         </tr>
 
+        <tr>
+            <td class="fn"><p>Llenar registro con ceros</p></td>
+            <td><p>...TipoDato <u>zerofill</u></p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Aumentar la capacidad (sin Signo)</p></td>
+            <td><p>...TipoDato unsigned</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Delimitar valores de campo</p></td>
+            <td><p>create table NomTabla (valor <u>enum</u>('Posibilidad1','Posibilidad2','Posibilidad3'));</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+        </tr>
+
         <tr style="display: grid; grid-template-columns: 100%; background-color: rgb(0, 255, 242);">
             <td><p></p></td>
         </tr>
@@ -372,23 +407,38 @@
         </tr>
 
         <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
-            <td class="fn"><p></p></td>
-            <td><p></p></td>
+            <td class="fn"><p>Eq create table</p></td>
+            <td><img src="../source/SQL/img/EquivalentCreateTable.PNG" usemap="#EQCt"></td>
         </tr>
 
         <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
             <td class="fn"><p></p></td>
-            <td><p></p></td>
+            <td></td>
         </tr>
 
         <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
             <td class="fn"><p></p></td>
-            <td><p></p></td>
+            <td></td>
         </tr>
 
         <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
             <td class="fn"><p></p></td>
-            <td><p></p></td>
+            <td></td>
+        </tr>
+
+        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+            <td class="fn"><p></p></td>
+            <td></td>
+        </tr>
+
+        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+            <td class="fn"><p></p></td>
+            <td></td>
+        </tr>
+
+        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+            <td class="fn"><p></p></td>
+            <td></td>
         </tr>
 
         <tr>
@@ -412,6 +462,14 @@
         </map>
         <map name="DesBs">
             <area alt="Describe la base" title="Describe la base" coords="48,41,253,63" shape="rect">
+        </map>
+        <map name="EQCt">
+            <area target="" alt="Equivalente a Create Table" title="Equivalente a Create Table" href="" coords="1,2,27,41" shape="rect">
+        </map>
+        <map name="TaMyISA">
+            <area alt="Motor Estático " title="Motor Estático " coords="3,1,772,33" shape="rect">
+            <area alt="Motor Dinámico" title="Motor Dinámico" coords="-1,34,773,69" shape="rect">
+            <area alt="Motor Comprimido" title="Motor Comprimido" coords="3,70,773,97" shape="rect">
         </map>
     </div>
 
