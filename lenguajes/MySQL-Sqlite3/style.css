@@ -32,4 +32,14 @@ tr{
 p{
     text-align: center;
     overflow: hidden;
+    justify-content: center;
+    justify-items: center;
+}
+td{
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+}
+img {
+    width:30vw;
 }

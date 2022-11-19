@@ -82,6 +82,26 @@
             <td class="fn"><p>Cambiar Motor de base (estatica, Dinamica, Comprimida) MyISAM</p></td>
             <td><img src="../source/SQL/img/TablasMyISAM.PNG" usemap="#TaMyISA"></td>
         </tr>
+        
+        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+            <td class="fn"><p>Motor Merge</p></td>
+            <td><img src="../source/SQL/img/MotorMerge.PNG" usemap="#MotorMerge"></td>
+        </tr>
+        
+        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+            <td class="fn"><p>Mostrar motores disponibles</p></td>
+            <td><img src="../source/SQL/img/MotoresDis.PNG" usemap="#MotoresDis"></td>
+        </tr>
+        
+        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+            <td class="fn"><p>Ver motor en uso</p></td>
+            <td><img src="../source/SQL/img/MotorActual.PNG" usemap="#MotorActual"></td>
+        </tr>
+        
+        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+            <td class="fn"><p>Asignar motor a tabla existente</p></td>
+            <td><img src="../source/SQL/img/MotorMerge.PNG" usemap="#MotorMerge"></td>
+        </tr>
 
         <tr>
             <td class="fn"><p>Ver campos de la tabla:</p></td>
@@ -351,8 +371,14 @@
         </tr>
         
         <tr>
-            <td class="fn"><p></p></td>
+            <td class="fn"><p>Asignacion de Alias</p></td>
+            <td><p>select NomTabla.NomCampo as NueAlias, NomTabla2.NomCampo2 as NueAlias2, TablaNuevoAlias as NomCampo3 from NomTabla, NomTabla2, <u>NomTablaAntigua</u> TablaNuevoAlias Condicion</p></td>
             <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Unir tablas</p></td>
+            <td><p>select NomTabla.NomRegistro, NomTabla2.NomRegistro2 from NomTabla (Desde donde inicio) <u>inner join</u> NomTabla on NomTabla.NomRegistroUnir, NomTabla2.NomRegistro2Unir (condicion);</p></td>
             <td><p></p></td>
         </tr>
         
@@ -464,15 +490,55 @@
             <area alt="Describe la base" title="Describe la base" coords="48,41,253,63" shape="rect">
         </map>
         <map name="EQCt">
-            <area target="" alt="Equivalente a Create Table" title="Equivalente a Create Table" href="" coords="1,2,27,41" shape="rect">
+            <area alt="Equivalente a Create Table" title="Equivalente a Create Table" coords="1,2,27,41" shape="rect">
         </map>
         <map name="TaMyISA">
             <area alt="Motor Estático " title="Motor Estático " coords="3,1,772,33" shape="rect">
             <area alt="Motor Dinámico" title="Motor Dinámico" coords="-1,34,773,69" shape="rect">
             <area alt="Motor Comprimido" title="Motor Comprimido" coords="3,70,773,97" shape="rect">
         </map>
+        <map name="MotorMerge">
+            <area alt="Ambas tablas son MyISAM" title="Ambas tablas son MyISAM" coords="0,0,296,177" shape="rect">
+            <area alt="Unión de tablas" title="Unión de tablas" coords="-1,177,296,269" shape="rect">
+        </map>
+        <map name="MotoresDis">
+            <area alt="Ver Motores disponibles" title="Ver Motores disponibles" coords="-1,-1,251,35" shape="rect">
+        </map>
+        <img src="MotorActual.PNG" usemap="#MotorActual">
+        <map name="MotorActual">
+            <area alt="Mostrar Motor ACTUAL y otra informacion" title="Mostrar Motor ACTUAL y otra informacion" coords="0,0,575,50" shape="rect">
+        </map>
+        <map name="EjmExpreRegu">
+            <area alt="K ó KA" title="K ó KA" coords="320,68,0,0" shape="rect">
+            <area alt="Seguido del guion bajo" title="Seguido del guion bajo" coords="362,42,36" shape="circle">
+            <area alt="de 0 a 9 entre J.Mayus y J.Minus" title="de 0 a 9 entre J.Mayus y J.Minus" coords="402,0,875,76" shape="rect">
+            <area alt="Mínimo 5 Máximo 9" title="Mínimo 5 Máximo 9" coords="884,1,1083,74" shape="rect">
+        </map>
     </div>
-
+    <h2>Motores de tablas</h2>
+    <p><b>Tablas ISAM:</b> Fue una tabla secuencial que avanza de a bloque 1-1.</p>
+    <p><b>Tablas MyISAM:</b> Se generan dos archivos distintos, establecen la estructura de la tabla. Es la que se usa en el hoy</p>
+    <ul>
+        <li><b>Estaticas:</b> Tienen un tamaño definido y solo pueden almacenar un tipo de dato, todos los registros ocupan el mismo(maximo) espacio independientemente si es mayor o menos que el registro.</li>
+        <li><b>Dinamicas</b> Intentan optimizar el tamaño, son mas lentas que las Estaticas debido a que asigna el tamaño a cada registro.</li>
+        <li><b>Comprimidas:</b> Se compacta la informacion, no son muy usadas en el uso comun, se hace uso en servidores</li>
+    </ul>
+    <p><b>Motor InnoDB</b> Es el usado actualmente, lo asigna en automatico</p>
+    <p><b>Memory</b> Era el motor HEAP, hace uso de la memoria RAM para guardar los datos, no se guarda en el disco duro, es optimo pero es volatil(Cuando se cierra/apaga toda la informacion de la memoria RAM se borra).</p>
+    <p><b>Merge:</b> Agrupa tablas de tipo MyISAM siempre y cuando tengan los mismos tipos de datos, se usa para respaldos</p>
+    <h2>Expresiones regulares</h2>
+    <p>Son sstrings que establecen las condiciones para evaluar un caracter</p>
+    <ul>
+        <li>Rango del 0-9: [0-9]</li>
+        <li>Rango del 0-9: [0-9]+ que aparezca un o mas veces</li>
+        <li>Cuantificador: numero exacto de cuantas veces quiero que aparezca {1 <u>Digito/s</u>}->{liteInferior, limiteSuperior}</li>
+        <li>Cuantificador * significa que se repita 0 mas veces</li>
+        <ul>
+            Ejemplo:
+            <img src="../source/SQL/img/EjmExpreRegu.PNG" usemap="#EjmExpreRegu">
+        </ul>
+    </ul>
+    <p></p>
     
 </body>
 👈 Igual
