@@ -1,0 +1,3 @@
+create table Clientes (idCliente int auto_increment primary key, Documento varchar(15) unique not null, Nombre varchar(20) not null, Apellido varchar(20) not null);
+create table CuentasCliente (idCuenta int auto_increment primary key, Numero int not null unique, idCliente int not null, Monto decimal(10,2), foreign key (idCliente) references Clientes(idCliente));
+create table MovimientoCuenta (idMovimiento int auto_increment primary key, idCuenta int not null, Retiro tinyint not null, Monto decimal(10,2), Movimiento tinyint not null, idCuentaMovimiento int, Monto decimal(10,2), foreign key (idCuenta) references CuentasCliente(idCuenta), foreign key (idCuentaMovimiento) references CuentasCliente(idCuenta));

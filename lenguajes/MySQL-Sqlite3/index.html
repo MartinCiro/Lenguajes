@@ -383,6 +383,54 @@
         </tr>
         
         <tr>
+            <td class="fn"><p>Union por la izquierda</p></td>
+            <td><p>Obtiene todo lo de Tabla A y el vinculo que tiene con tabla B</p></td>
+            <td><p>select NomTabla.NomRegistro, NomTabla2.NomRegistro2 from NomTabla (Desde donde inicio) <u>left join</u> NomTabla on NomTabla.NomRegistroUnir, NomTabla2.NomRegistro2Unir (condicion);</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Union por la Derecha</p></td>
+            <td><p>Obtiene todo lo de Tabla B y el vinculo que tiene con tabla A</p></td>
+            <td><p>select NomTabla.NomRegistro, NomTabla2.NomRegistro2 from NomTabla (Desde donde inicio) <u>right join</u> NomTabla on NomTabla.NomRegistroUnir, NomTabla2.NomRegistro2Unir (condicion);</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Insertar consultados en tabla con ripo de datos compatibles</p></td>
+            <td><p>insert into NomTablaDestino(NomCampoDestino, NomCampo2Destino) select TablaOrigen.CampoOrigen, Tabla2Origen.Campo2Origen from TablaOrigen, Tabla2Origen Condicion</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Variables Temporales</p></td>
+            <td><p>select @NombreVariableTemporal := operacion;<br>select @NombreVariableTemporal;</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Definicion de variable directa</p></td>
+            <td><p>set @NombreVariableTemporal = 'NomTabla'</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Asignar cantidad por defecto</p></td>
+            <td><p>NomCampoNuevo Tipo <u>default(VlrDefecto)</u> </p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Scripts</p></td>
+            <td><p>Ejecutar script: La base ya debe de estar creada. Instruccion cmd:<br>mysql -u Usuario NomBaseDestino &lt; "ruta"</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
             <td class="fn"><p></p></td>
             <td><p></p></td>
             <td><p></p></td>
