@@ -100,7 +100,7 @@
         
         <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
             <td class="fn"><p>Asignar motor a tabla existente</p></td>
-            <td><img src="../source/SQL/img/MotorMerge.PNG" usemap="#MotorMerge"></td>
+            <td><img src="../source/SQL/img/AsignarMotor.PNG" usemap="#MotorMerge"></td>
         </tr>
 
         <tr>
@@ -420,7 +420,19 @@
         
         <tr>
             <td class="fn"><p>Scripts</p></td>
-            <td><p>Ejecutar script: La base ya debe de estar creada. Instruccion cmd:<br>mysql -u Usuario NomBaseDestino &lt; "ruta"</p></td>
+            <td><p>Ejecutar script: La base ya debe de estar creada. Instruccion cmd:<br>mysql -u Usuario -p NomBaseDestino &lt; "ruta"</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Backup</p></td>
+            <td><p>mysqldump -u Usuario -p NomBase &gt; "RutaDestino"</p></td>
+            <td><p>.output "RutaDestino"<br>.dump</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
             <td><p></p></td>
         </tr>
         
@@ -486,8 +498,8 @@
         </tr>
 
         <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
-            <td class="fn"><p></p></td>
-            <td></td>
+            <td class="fn"><p>Claves Foraneas y primarias<br>Verde hacia donde apunta Azul desde donde apunta</p></td>
+            <td><img src="../source/SQL/img/ModelColor.PNG" usemap="#ModelColor"></td>
         </tr>
 
         <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
@@ -561,6 +573,10 @@
             <area alt="Seguido del guion bajo" title="Seguido del guion bajo" coords="362,42,36" shape="circle">
             <area alt="de 0 a 9 entre J.Mayus y J.Minus" title="de 0 a 9 entre J.Mayus y J.Minus" coords="402,0,875,76" shape="rect">
             <area alt="Mínimo 5 Máximo 9" title="Mínimo 5 Máximo 9" coords="884,1,1083,74" shape="rect">
+        </map>
+        <map name="ModelColor">
+            <area alt="Verde hacia donde Apunta" title="Verde hacia donde Apunta" coords="1,176,333,301" shape="rect">
+            <area alt="Azul desde dónde" title="Azul desde dónde" coords="-1,-1,333,176" shape="rect">
         </map>
     </div>
     <h2>Motores de tablas</h2>
