@@ -25,7 +25,7 @@
 
         <tr>
             <td class="fn"><p>Limpiar pantalla</p></td>
-            <td><p>system clear;</p></td>
+            <td><p>system clear; Linux | system cls; Windows</p></td>
             <td><p>.shell clear</p></td>
         </tr>
         
@@ -72,33 +72,32 @@
             <td><p>.mode column</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Crear tabla:</p></td>
             <td><p>create table NomTabla (NomCampo Tipo(AnchoMaximo), Nom2 Tipo2(AnchoMaximo));</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
         
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Cambiar Motor de base (estatica, Dinamica, Comprimida) MyISAM</p></td>
             <td><img src="../source/SQL/img/TablasMyISAM.PNG" usemap="#TaMyISA"></td>
         </tr>
         
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Motor Merge</p></td>
             <td><img src="../source/SQL/img/MotorMerge.PNG" usemap="#MotorMerge"></td>
         </tr>
         
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Mostrar motores disponibles</p></td>
             <td><img src="../source/SQL/img/MotoresDis.PNG" usemap="#MotoresDis"></td>
         </tr>
         
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Ver motor en uso</p></td>
             <td><img src="../source/SQL/img/MotorActual.PNG" usemap="#MotorActual"></td>
         </tr>
         
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Asignar motor a tabla existente</p></td>
             <td><img src="../source/SQL/img/AsignarMotor.PNG" usemap="#MotorMerge"></td>
         </tr>
@@ -115,22 +114,19 @@
             <td><p>select * from sqlite_master where type = "table";</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Insertar datos en Tabla</p></td>
             <td><p>insert into NomCampo values ('NomRegistro','NomRegistro2'), ('NomRegistro','NomRegistro2'));</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Eliminar los registros de una Tabla</p></td>
             <td><p>delete from NomTabla;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Eliminar Tabla</p></td>
             <td><p>drop table NomCampo;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
         <tr>
@@ -139,22 +135,19 @@
             <td><p>Eliminacion manual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Consultar datos en tabla</p></td>
             <td><p>select * from NomTabla;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Consultar datos en tabla por Registro</p></td>
             <td><p>select * from NomTabla where NomCampo='Filtro';</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Limitar consultar datos en tabla</p></td>
             <td><p>select * from NomTabla limit NumLim;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
         <tr>
@@ -165,179 +158,150 @@
             <td><p>.mode csv | .import 'RutaArch'</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Filtrar Datos <u>con</u> Repeticion</p></td>
             <td><p>select NomColumna, NomColumna2 from NomTabla order by NomCampo, NomCampo2</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Filtrar Datos <u>sin</u> Repeticion </p></td>
             <td><p>select <u>distinct</u> NomColumna... 👆</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Filtrar Ascendente</p></td>
             <td><p>select NomColumna, NomColumna2 from NomTabla order by NomCampo asc;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Filtrar Descendente</p></td>
             <td><p>select NomColumna, NomColumna2 from NomTabla order by NomCampo desc;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Contar coincidencias</p></td>
             <td><p>select count(*) from NomTabla;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Contar sin Repetir</p></td>
             <td><p>select count(distinct NomCampo) from NomTabla;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Contar con condicion</p></td>
             <td><p>select count(*) from (select * from NomTabla where condicion) as ALIAS;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Contar Repeticiones en campo</p></td>
             <td><p>seleccionar campo1, campo2, campoContar...<br>select campo1, campo2, count(*) from NomTabla group by campo1;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Numero-Nombre mayor</p></td>
             <td><p>select max(NomCampo) from NomTabla;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Numero-Nombre menor</p></td>
             <td><p>select min(NomCampo) from NomTabla;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Sumar campos</p></td>
             <td><p>select sum(NomCampo) from NomTabla;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Sumar campos distintos</p></td>
             <td><p>select sum(distinct NomCampo) from NomTabla;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Sumar Registros por campos</p></td>
             <td><p>select NomCampo, sum(NomCampo) from NomTabla group by NomCampo;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Calcular el promedio por campos</p></td>
             <td><p>select NomCampo, avg(NomCampo) from NomTabla group by NomCampo;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Modificar Registros</p></td>
             <td><p>update NomTabla set NomCampo=VlrNuevo, NomCampo2=VlrNuevo;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Modificar Registro Especifico</p></td>
             <td><p>update NomTabla set NomCampo=VlrNuevo where NomCampo='Filtro' and NomCampo2='Filtro';</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Eliminar Registro Especifico</p></td>
             <td><p>delete from cursos where NomCampo='Filtro';</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Agregar campo</p></td>
             <td><p>alter table NomTabla add NomCampoNuevo TipoDato;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Cambiar nombre</p></td>
             <td><p>alter table NomCampo rename to NomCampoNuevo</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Crear tabla sino existe</p></td>
             <td><p>create table if not exists NomTabla(campo1 TipoDato, campo2 TipoDato);</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Establecer llave primaria</p></td>
             <td><p>Normalmente va al final de la creacion de tablas (por eso las tres parentesis)<br>...primary key());</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Establecer llave foranea</p></td>
             <td><p>Normalmente va al final de la creacion de tablas (por eso las tres parentesis)<br>...foreign key(CampoDependiente) references NomTabla(NomCampo));<br><strong style="color: rgb(0, 102, 255);">alter table Asignaturas add foreign key (MateriaAsignatura) references Materias(idMateria);</strong></p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Asociacion de campos</p></td>
             <td><p>create table NomTabla (NomCampo TipoDato not null auto_increment, NomCampo2 TipoDato not null, primary key (NomCampo), foreign key(CampoDependiente) references NomTabla(NomCampo));</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Valor unico (no se repite en la tabla)</p></td>
             <td><p>create table NomTabla (NomCampo TipoDato not null auto_increment, NomCampo2 TipoDato not null unique, primary key (NomCampo), foreign key(CampoDependiente) references NomTabla(NomCampo));</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Insertar registro en campo especifico</p></td>
             <td><p>insert into NomTabla (NomCampo) values ('NomRegistroNuevo');</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Juntar tablas</p></td>
             <td><p>select NomTabla.NomCampo, NomTabla2.NomCampo2 from NomTabla, NomTabla2;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Juntar tablas con condicion</p></td>
             <td><p style="text-align: left;">...cuando la clave foranea apunte a la clave primaria del campo (que sea el mismo)...<br>select NomTabla.NomCampo, NomTabla2.NomCampo2 from NomTabla, NomTabla2 where NomTabla.NomCampo=NomTabla2.NomCampo2;<br>select Materias.Materia, Asignaturas.Asignatura from Materias, Asignaturas where Asignaturas.MateriaAsignatura=Materias.idMateria;
             </p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Renombrar Registro</p></td>
             <td><p>alter table NomTabla change NomCampo NomCampoNuevo TipoDato not null;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Renombrar Tabla</p></td>
             <td><p>RENAME TABLE NomCampo TO NomCampoNuevo;</p></td>
-            <td><p>👈 Igual</p></td>
         </tr>
 
         <tr>
@@ -348,41 +312,37 @@
 
         <tr>
             <td class="fn"><p>Retornar el ultimo ID generado</p></td>
-            <td><p>select last_insert_id();<br>insert into NomCampo values ('NomRegistro','NomRegistro2') values last_insert_id(),NumAlQueQuieroQuePertenezca);</p></td>
+            <td><p>select last_insert_id();<br>insert into NomCampo values ('NomRegistro','NomRegistro2') values <u>last_insert_id()</u>,NumAlQueQuieroQuePertenezca); ó  select new.NomCampo into NomCampo2</p></td>
             <td><p>👈 last_insert_rowid(),</p></td>
         </tr>
 
         <tr>
             <td class="fn"><p>Llenar registro con ceros</p></td>
             <td><p>...TipoDato <u>zerofill</u></p></td>
-            <td><p></p></td>
+            <td><p>No aplica</p></td>
         </tr>
         
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Aumentar la capacidad (sin Signo)</p></td>
             <td><p>...TipoDato unsigned</p></td>
-            <td><p></p></td>
         </tr>
         
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Delimitar valores de campo</p></td>
             <td><p>create table NomTabla (valor <u>enum</u>('Posibilidad1','Posibilidad2','Posibilidad3'));</p></td>
-            <td><p></p></td>
         </tr>
         
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Asignacion de Alias</p></td>
             <td><p>select NomTabla.NomCampo as NueAlias, NomTabla2.NomCampo2 as NueAlias2, TablaNuevoAlias as NomCampo3 from NomTabla, NomTabla2, <u>NomTablaAntigua</u> TablaNuevoAlias Condicion</p></td>
-            <td><p></p></td>
         </tr>
         
-        <tr>
+        <tr class="unCol">
             <td class="fn"><p>Unir tablas</p></td>
             <td><p>select NomTabla.NomRegistro, NomTabla2.NomRegistro2 from NomTabla (Desde donde inicio) <u>inner join</u> NomTabla on NomTabla.NomRegistroUnir, NomTabla2.NomRegistro2Unir (condicion);</p></td>
-            <td><p></p></td>
         </tr>
         
-        <tr>
+        <tr style="display: grid; grid-template-columns: 22% 26% 52%;">
             <td class="fn"><p>Union por la izquierda</p></td>
             <td><p>Obtiene todo lo de Tabla A y el vinculo que tiene con tabla B</p></td>
             <td><p>select NomTabla.NomRegistro, NomTabla2.NomRegistro2 from NomTabla (Desde donde inicio) <u>left join</u> NomTabla on NomTabla.NomRegistroUnir, NomTabla2.NomRegistro2Unir (condicion);</p></td>
@@ -420,7 +380,7 @@
         
         <tr>
             <td class="fn"><p>Scripts</p></td>
-            <td><p>Ejecutar script: La base ya debe de estar creada. Instruccion cmd:<br>mysql -u Usuario -p NomBaseDestino &lt; "ruta"</p></td>
+            <td><p>Ejecutar script: La base ya debe de estar creada. Instruccion cmd:<br>mysql -u Usuario -p NomBaseDestino  "ruta"</p></td>
             <td><p></p></td>
         </tr>
         
@@ -428,6 +388,36 @@
             <td class="fn"><p>Backup</p></td>
             <td><p>mysqldump -u Usuario -p NomBase &gt; "RutaDestino"</p></td>
             <td><p>.output "RutaDestino"<br>.dump</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Insertar imagen.<br>Puede ser un campo de texto<br>blob=Campo tiene que ser blob</p></td>
+            <td><p>update NomTabla set NomCampo=('Ruta') condicion;<br>update NomTabla set NomCampo=Load_file('Ruta') condicion;</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>views (vistas automaticas) para usuario</p></td>
+            <td><p>create view NomVista_vw as CONSULTA (Normalmente select)</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Indices vusquedas rapidas</p></td>
+            <td><p>...index idx_NomIndice(Campo));</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Disparador (evento)</p></td>
+            <td><p>delimiter CaRacter create trigger NomTrigger <u>before (antes)/after (despues)</u> Condicion begin Proceso; end CaRacter</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Condicionales</p></td>
+            <td><p></p></td>
+            <td><p></p></td>
         </tr>
         
         <tr>
@@ -456,12 +446,12 @@
             <td><h2>MySQL Workbench (Herramienta grafica de MySQL)</h2></td>
         </tr>
 
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Crear base de datos<br><u>(Create schema</u> EQ <u>Create Database)</u></p></td>
             <td><p>Boton <strong>create a new schema</strong></p><img src="../source/SQL/img/NewChema.PNG"></td>
         </tr>
 
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Usar base de datos<br><u>NameBaseNegrilla</u> EQ <u>use NomBase</u></p></td>
 
             <td style="display: grid; grid-template-columns: 1fr 1fr;">
@@ -472,58 +462,63 @@
             </td>
         </tr>
 
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Eq a terminal</p></td>
             <td><img src="../source/SQL/img/EquivalentTerminal.PNG"></td>
         </tr>
 
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Eq a enter<br>Ejecutar desde la linea actual</p></td>
             <td><img src="../source/SQL/img/EquivalentEnter.PNG"  usemap="#EQTer"></td>
         </tr>
 
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Eq a show databases</p></td>
             <td><img src="../source/SQL/img/EquivalentShowDatabase.PNG" usemap="#EQShow"></td>
         </tr>
 
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Eq Describe NomBase</p></td>
             <td><img src="../source/SQL/img/EquivalentDescribeBase.PNG" usemap="#DesBs"></td>
         </tr>
 
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Eq create table</p></td>
             <td><img src="../source/SQL/img/EquivalentCreateTable.PNG" usemap="#EQCt"></td>
         </tr>
 
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Claves Foraneas y primarias<br>Verde hacia donde apunta Azul desde donde apunta</p></td>
             <td><img src="../source/SQL/img/ModelColor.PNG" usemap="#ModelColor"></td>
         </tr>
 
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p>Datos temporales con begin/start transaction, Cuando se determine el "commit" los cambios se aplican, sino lo puedo deshacer con rollback</p></td>
             <td>Pasa el mouse por la imagen<img src="../source/SQL/img/OpTemp.PNG" usemap="#OpTemp">
             </td>
         </tr>
 
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
+            <td class="fn"><p>Metodos (Procedimientos)<br>delimiter // &lt;- Cambiar ;<br>create procedure NomBase NomProcedimiento(in/out/inout NomParametro (Tipo)) begin Operacion; end //<br>call NomProcedimiento ('NomParametro ó vacio'); &lt;- Desde el codigo</p></td>
+            <td></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Metodos (Funciones)<br>delimiter // &lt;- Cambiar ;<br>create function NomFuncion (NomParametro (Tipo)) returns Tipo <u>&lt;-Deterministica(Siempre se obtiene el mismo dato)</u>  begin Operacion; return(Variable) end //<br>select NomFuncion ('NomParametro'); &lt;- Desde el codigo</p></td>
+            <td></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Declaracion de variable</p></td>
+            <td>declare NomVariable Tipo;</td>
+        </tr>
+
+        <tr class="unCol">
             <td class="fn"><p></p></td>
             <td></td>
         </tr>
 
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
-            <td class="fn"><p></p></td>
-            <td></td>
-        </tr>
-
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
-            <td class="fn"><p></p></td>
-            <td></td>
-        </tr>
-
-        <tr style="display: grid; grid-template-columns: repeat(2, 1fr)">
+        <tr class="unCol">
             <td class="fn"><p></p></td>
             <td></td>
         </tr>

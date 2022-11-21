@@ -43,3 +43,7 @@ td{
 img {
     width:30vw;
 }
+.unCol{
+    display: grid; 
+    grid-template-columns: 30% 70%;
+}
