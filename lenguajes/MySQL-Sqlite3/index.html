@@ -529,13 +529,34 @@
         </tr>
 
         <tr class="unCol">
-            <td class="fn"><p>Metodos (Procedimientos)<br>delimiter // &lt;- Cambiar ;<br>create procedure NomBase NomProcedimiento(in/out/inout NomParametro (Tipo)) begin Operacion; end //<br>call NomProcedimiento ('NomParametro ó vacio'); &lt;- Desde el codigo</p></td>
-            <td></td>
+            <td class="fn"><p>Procedimientos y Funciones</p></td>
+            <td><p>Hay un término subrutina o subprograma que significa una pieza de código parametrizada que se puede llamar desde diferentes lugares. <br>
+            Las funciones y los procedimientos son implementaciones de aquellos. Por lo general, las funciones devuelven valores y los procedimientos no devuelven nada.</p></td>
         </tr>
 
         <tr class="unCol">
-            <td class="fn"><p>Metodos (Funciones)<br>delimiter // &lt;- Cambiar ;<br>create function NomFuncion (NomParametro (Tipo)) returns Tipo <u>&lt;-Deterministica(Siempre se obtiene el mismo dato)</u>  begin Operacion; return(Variable) end //<br>select NomFuncion ('NomParametro'); &lt;- Desde el codigo</p></td>
-            <td></td>
+            <td class="fn"><p>Metodos (Procedimientos)</p></td>
+            <td>delimiter // &lt;- Cambiar<br>create procedure NomProcedimiento(in/out/inout NomParametro (Tipo)) begin Operacion; end; //<br>call NomProcedimiento ('NomParametro ó vacio'); &lt;- Desde el codigo</td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Eliminar Procedimientos</p></td>
+            <td><p>drop procedure NomProcedimiento;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Formatear(cambiar) tipo de dato</p></td>
+            <td><p>...cast(NomCampo(NomRegistro) as TipoNuevo);</p></td>
+        </tr>   
+
+        <tr class="unCol">
+            <td class="fn"><p>Eliminar Espacios en blanco</p></td>
+            <td><p>...trim(NomCampo/NomRegistro);</p></td>
+        </tr>         
+
+        <tr class="unCol">
+            <td class="fn"><p>Metodos (Funciones)</p></td>
+            <td><p>delimiter // &lt;- Cambiar ;<br>create function NomFuncion (NomParametro (Tipo)) returns Tipo <u>&lt;-Deterministica(Siempre se obtiene el mismo dato)</u>  begin Operacion; return(Variable) end //<br>select NomFuncion ('NomParametro'); &lt;- Desde el codigo</p></td>
         </tr>
 
         <tr class="unCol">
