@@ -135,6 +135,11 @@
         </tr>
 
         <tr class="unCol">
+            <td class="fn"><p>Concatenar</p></td>
+            <td><p>update NomTb=<u>concat</u>(NomCampo,'AcOncatenar') condicion;</p></td>
+        </tr>
+
+        <tr class="unCol">
             <td class="fn"><p>Insertar Campo</p></td>
             <td><p>alter table NomTabla add column NomRegistro TipoDato;</p></td>
         </tr>
@@ -180,12 +185,12 @@
 
         <tr class="unCol">
             <td class="fn"><p>Filtrar Ascendente</p></td>
-            <td><p>select NomColumna, NomColumna2 from NomTabla order by NomCampo asc;</p></td>
+            <td><p>select NomColumna, NomColumna2 (ó *) from NomTabla order by NomCampo/NumCampo asc;</p></td>
         </tr>
 
         <tr class="unCol">
             <td class="fn"><p>Filtrar Descendente</p></td>
-            <td><p>select NomColumna, NomColumna2 from NomTabla order by NomCampo desc;</p></td>
+            <td><p>select NomColumna, NomColumna2 from NomTabla order by NomCampo/NumCampo desc;</p></td>
         </tr>
 
         <tr class="unCol">
@@ -216,6 +221,11 @@
         <tr class="unCol">
             <td class="fn"><p>Numero-Nombre menor</p></td>
             <td><p>select min(NomCampo) from NomTabla;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Operadores aritmeticos</p></td>
+            <td><p>select Operacion (suma, multiplicacion, modulo, etc);</p></td>
         </tr>
 
         <tr class="unCol">
@@ -358,20 +368,20 @@
         </tr>
         
         <tr class="unCol">
-            <td class="fn"><p>Unir tablas</p></td>
-            <td><p>select NomTabla.NomRegistro, NomTabla2.NomRegistro2 from NomTabla (Desde donde inicio) <u>inner join</u> NomTabla on NomTabla.NomRegistroUnir, NomTabla2.NomRegistro2Unir (condicion);</p></td>
+            <td class="fn"><p>Unir tablas</p><br>Forma corta: select NAlias.NomCampo, NAlias.NomCampo2 from NomTabla (Desde donde inicio) from NomTabla NAlias <u>inner join</u> NomTabla2 NAlias2 on NAlias2.NomCampoUnir, NAlias2.NomCampo2Unir (condicion);</td>
+            <td><p>select NomTabla.NomCampo, NomTabla2.NomCampo2 from NomTabla (Desde donde inicio) <u>inner join</u> NomTabla on NomTabla.NomcampoUnir, NomTabla2.Nomcampo2Unir (condicion);</p></td>
         </tr>
         
         <tr style="display: grid; grid-template-columns: 22% 26% 52%;">
             <td class="fn"><p>Union por la izquierda</p></td>
             <td><p>Obtiene todo lo de Tabla A y el vinculo que tiene con tabla B</p></td>
-            <td><p>select NomTabla.NomRegistro, NomTabla2.NomRegistro2 from NomTabla (Desde donde inicio) <u>left join</u> NomTabla on NomTabla.NomRegistroUnir, NomTabla2.NomRegistro2Unir (condicion);</p></td>
+            <td><p>select NomTabla.Nomcampo, NomTabla2.Nomcampo2 from NomTabla (Desde donde inicio) <u>left join</u> NomTabla on NomTabla.NomcampoUnir, NomTabla2.Nomcampo2Unir (condicion);</p></td>
         </tr>
         
         <tr>
             <td class="fn"><p>Union por la Derecha</p></td>
             <td><p>Obtiene todo lo de Tabla B y el vinculo que tiene con tabla A</p></td>
-            <td><p>select NomTabla.NomRegistro, NomTabla2.NomRegistro2 from NomTabla (Desde donde inicio) <u>right join</u> NomTabla on NomTabla.NomRegistroUnir, NomTabla2.NomRegistro2Unir (condicion);</p></td>
+            <td><p>select NomTabla.Nomcampo, NomTabla2.Nomcampo2 from NomTabla (Desde donde inicio) <u>right join</u> NomTabla on NomTabla.NomcampoUnir, NomTabla2.Nomcampo2Unir (condicion);</p></td>
         </tr>
         
         <tr>
@@ -418,7 +428,7 @@
         
         <tr>
             <td class="fn"><p>views (vistas automaticas) para usuario</p></td>
-            <td><p>create view NomVista_vw as CONSULTA (Normalmente select)</p></td>
+            <td><p>create view NomVista_vw as CONSULTA (Normalmente select);<br>select * from NomVista_vw;</p></td>
             <td><p></p></td>
         </tr>
         
