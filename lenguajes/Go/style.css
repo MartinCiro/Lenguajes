@@ -1,0 +1,23 @@
+p{
+ display: flex;
+ justify-content: center;   
+}
+body{
+    background-color: aquamarine;
+}
+h1 {
+    text-align: center;
+}
+h3{
+    color: rgb(49, 37, 21);
+    display: flex;
+    justify-content: center;
+}
+.ipr{
+    color: blue;
+}
+.sub{
+    background-color: violet;
+    width: 50vh;
+    justify-content: center;
+}
