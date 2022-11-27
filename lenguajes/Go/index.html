@@ -33,7 +33,7 @@
     <p>Usamos \n para salto de linea, \t para espaico tabular</p>
 
     <h3>Formateo de datos</h3>
-    <p>Dentro del print se concatena el <strong>%s (Insertar string)</strong>, %d (Insertar int) seguido de las variables con el mismo formato insertado. <b>...print("Hola, %s y su edad es: %d \n", nombre <u>(String)</u>, edad <u>(Int)</u>)</b> para insertar valor sin referencia usamos <b>%v</b></p>
+    <p>Dentro del print se concatena el <strong>%s (Insertar string)</strong>, %d (Insertar int) seguido de las variables con el mismo formato insertado. <b>...print("Hola, %s y su edad es: %d \n", nombre <u>(String)</u>, edad <u>(Int)</u>)</b> para insertar valor sin referencia usamos <b>%v</b> ver manual para más referencias</p>
 
     <h3>Guardar en una variable el valorformateado</h3>
     <p>NomVariable = fmt.<u>Sprintf</u>("Ejemplo anterior")</p>
@@ -80,5 +80,25 @@
             <button>Curso de GO en PDF</button>
         </a>
     </div>
+    <h3>Array o vectores</h3>
+    <p>var NomArreglo [TamañoArregle]TipoDatos{ElementosSeparadospor<u>coma</u>}</p>
+    <ul>
+        <li>Arreglo Dinamico: ...NomArreglo[...]... Los tres puntos significa que es dinamico
+            <li>Asignar Dato en posicion: <u>Posicion:Valor</u> <b>Ejm:</b> 0:"Alex",</li>
+        </li>
+        <li>Longitud: len(NomVector)</li>
+        <li>Delimitar el tamaño de un vector asignado: NomNuevoVector:=NomArraty[PosicionesDesde:PosicionHasta] <b>Ejm:</b> subMonenda:=monedas[0:3]</li>
+    </ul>
+    <h3>Slicen</h3>
+    <p>Parecido a los vectores</p>
+    <ul>
+        <li>NomSlicen := []TipoDato{ValoresInt} &larr; Inicia en posicion 1</li>
+        <li>Funcion Append: Permite agregar mas datos al Slicen. Ejm: numeros=append(numeros &larr; Slicen ya declarado, 4 &larr; Valor nuevo)</li>
+        <li></li>
+    </ul>
+    <h3>Funcion Make</h3>
+    <p>NomFuncion := make([]TipoDato, Longitud &larr;  Si ponemos cero queda un array automatico, Capacidad &larr; Maximo permitdo)</p>
+
+    
 </body>
 </html>
