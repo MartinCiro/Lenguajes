@@ -36,7 +36,6 @@ ol{/* Parte de la lista */
     border: 2px solid red;
     overflow-wrap: break-word;
     height: 25vw;
-    position: absolute;
 }
 li{/* Color de la lista */
     color: rgb(162, 0, 226);
