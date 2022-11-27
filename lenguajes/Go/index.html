@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!--link rel="stylesheet" href="style.css"-->
     <link rel="shortcut icon" href="https://www.pngitem.com/pimgs/b/424-4242146_gopher-png.png" type="image/x-icon">
     <title>Go</title>
 </head>
@@ -12,7 +12,7 @@
     <h1>Go</h1>
 
     <h3>Comentarios</h3>
-    <p>Se insertan con &nbsp;<span class="ipr">//</span> y bloques &nbsp;<span class="ipr">/*t*/</span></p>
+    <p>Se insertan con &nbsp;<span class="ipr">//</span>&nbsp;y bloques &nbsp;<span class="ipr">/*t*/</span></p>
 
     <h3>Concatenar</h3>
     <p>Se concatena con coma &nbsp;<span class="ipr">,</span></p>
@@ -24,10 +24,36 @@
         <li>var NomVariable string</li>
         <li>var NomVariable bool</li>
         <li>&nbsp;<span class="ipr">const</span> NomVariable = valor</li>
-        <p>Asignamos valores y declaramos variables con <strong>:=</strong> si son &nbsp;<span class="ipr">decimales</span> es necesario declarar como <strong>float</strong></p>
+        <p>Asignamos valores y declaramos variables con := si son <b>decimales </b> es necesario declarar como <b>float</b></p>
     </ul>
     <p>No usamos&nbsp;<b>punto y coma</b></p>
     <p class="sub">Se debe crear tres carpetas, bin, pkg, src</p>
+
+    <h3>Salto de linea y espacio tabular</h3>
+    <p>Usamos \n para salto de linea, \t para espaico tabular</p>
+
+    <h3>Formateo de datos</h3>
+    <p>Dentro del print se concatena el <strong>%s (Insertar string)</strong>, %d (Insertar int) seguido de las variables con el mismo formato insertado. <b>...print("Hola, %s y su edad es: %d \n", nombre <u>(String)</u>, edad <u>(Int)</u>)</b> para insertar valor sin referencia usamos <b>%v</b></p>
+
+    <h3>Guardar en una variable el valorformateado</h3>
+    <p>NomVariable = fmt.<u>Sprintf</u>("Ejemplo anterior")</p>
+
+    <h3>Tipo de datos</h3>
+    <ul>
+        <li><b>>uin8-uit64:</b> Numeros positivos</li>
+        <li>Float</li>
+        <li>String</li>
+        <li>Boleano</li>
+        <a href="../source/Go/Archivos/PDF/Programacion-Go-lang.pdf" target="_blank" rel="noopener noreferrer">
+            <button>Mas tipos de datos (Pg.20)</button>
+        </a>
+    </ul>
+
+    <h3>Obtener el tipo de dato</h3>
+    <p>...println(<u>"%T"</u>,NomVariable)</p>
+
+    <h3>Pedir datos por teclado</h3>
+    <p>...fmt.print("Ingrese") ...fmt.<u>scanln</u>(<b><u>&</u></b>NomVariable)</p>
     
     <h3>Mostrar mensaje por pantalla</h3>
     <p>Debemos importar la libreria &nbsp;<span class="ipr">fmt</span>&nbsp;y precedido un &nbsp;<span class="ipr">print</span>/&nbsp;<span class="ipr">println</span>/&nbsp;<span class="ipr">printf</span></p>
@@ -41,7 +67,7 @@
     <p>Deben ser enteros, se hace uso de los signos de operacion &nbsp;<span class="ipr">+ - * /</span></p>
 
     <h3>Funciones</h3>
-    <p>Se declara con &nbsp;<span class="ipr">func</span>&nbsp;NomFuncion(Parametros){ Operacion}</p>
+    <p>Se declara con &nbsp;<span class="ipr">func</span>&nbsp;NomFuncion(Parametros) TipoVariables{ Operacion (Normalmente se usa la palabra <u>return</u> para evitar agregar exceso de variables en el codigo)}</p>
 
     <div class="info">
         <a href="https://gobyexample.com/" target="_blank" rel="noopener noreferrer">

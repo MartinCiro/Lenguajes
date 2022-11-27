@@ -13,11 +13,3 @@ h3{
     display: flex;
     justify-content: center;
 }
-.ipr{
-    color: blue;
-}
-.sub{
-    background-color: violet;
-    width: 50vh;
-    justify-content: center;
-}
