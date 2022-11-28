@@ -109,7 +109,29 @@
         <li><b>Boleano:</b> variable=variable1<strong>Comparacion</strong>variable2</li>
         <li><b>Operadores logicos:</b> Not, And, Or<br><b>Not</b> = Devuelve el valor contrario de un booleano (...Println(<b>!</b>Booleano))<br><b>And</b>= Ambas setencias deben ser verdaderas (...Println(Booleano1 <b>&&</b> Booleano))<br><b>Or</b> = Ejecuta uno de los dos que sea verdadero (...Println(Booleano1 <b>||</b> Booleano))</li>
         <li><b>If</b> La estructura es parecida a la de <u>Javascript</u>: if Condicion { ProcesoSiVerdad} elseif Condicion{} else {Proceso si contrario}<li><b>Declaracion de variables dentro el condicional</b> if NomVariable1, NomVariable2 := Valor1, Valor2; NomVariable1 Comparacion{Operacion}</li></li>
-        <li><b></b></li>
+        <li><b>Switch</b> Switch{ case Condicion: Operacion. default: Operacion.}<br>
+            <ul><li>Switch NomVariable{ case 1, 2, 3:Operacion. default: Operacion.}</li></ul>
+    </li>
     </ul>
+    <h3>Operadores de asignacion</h3>
+    <ul>
+        <li><b>Operaciones basicas en asignacion:</b> variable1 <u><b>+=</b></u> valorSumar &larr; Toma el valor de variable1 y le suma valorSumar, aplica la misma extructura para las demas operaciones (Resta: <u><b>-=</b></u>) &larr; Igual con los demás</li>
+    </ul>
+
+    <h3>Operadores de incremento y decremento</h3>
+    <p>Para ello usamos Vriable<u>++</u> (no es necesario guardarlo en una variable) &larr; Misma estructura para el decremento (--)</p>
+    
+    <h3>Bucles</h3>
+    <p>No existe <strong>while</strong></p>
+    <ul>
+        <li><b>For:</b>for VariableControl; condicion; VariableControl{Operacion.}</li>
+        <li><b>Break y continue</b> <u>Break</u> "rompe" la operacion en determinado punto. <u>Continue</u> "Salta/Continua" con la siguiente iteracion</li>
+        <li><b>For Each</b> Normalemente se usa en <u>mapas</u> o en <u>Vectores</u> for Indice, Elementos := range NomVector{fmt.println(Indice, Elementos)}</li>
+    </ul>
+
+    <h3>Evitar error variable no definida</h3>
+    <p>Se hace uso de <b>_</b>NomVariable</p>
+
+    
 </body>
 </html>
