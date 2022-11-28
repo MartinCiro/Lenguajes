@@ -132,6 +132,20 @@
     <h3>Evitar error variable no definida</h3>
     <p>Se hace uso de <b>_</b>NomVariable</p>
 
-    
+    <div class="str">
+    <h3>Packete string (Convertir a mayus/minus)</h3>
+    <p>Normalmente se usa dentro de una funcion</p>
+    <ul>
+        <li><b>ToUpper (Mayusculas):</b> func NomFuncion (Parametros TipoDato){Parametro=<u>string</u>.ToUpper(Parametro)}</li>
+        <li><b>ToLower (Minusculas):</b> func NomFuncion (Parametros TipoDato){Parametro=<u>string</u>.ToLower(Parametro)}</li>
+        <li><b>Remplazar Caracter:</b> func NomFuncion (Parametros TipoDato){Parametro=<u>string</u>.Replace(Parametro,"LetraRemplazar", "Remplazo", NumeroDeReemplazos)}<ul><li><b>Remplazar todo (espacios):</b> Hacemos uso de la palabra clave replaceAll(parametro, "Remplazar", "Remplazo")</li></ul></li>
+    </ul>
+        <h3>Invertir String</h3>
+        <ol>
+            <li>Convetir a un arreglo "String.split(NomVariableString, "" &larr; hará que cada caracter quede guardado en una posicion del vector)"</li>
+            <li>Convertirlo a slice: NomNuevoVector := make([]string,0)<br>for i=:len(NomArregloArriba👆)-1, i>=0, i-- { NomVectorDeArriba = <u>append</u>(NomArray2, NomArrai1[1]) }</li>
+            <li>Convertirlo en string: return.String.<u>join</u>(NomArray2, "")</li>
+        </ol>
+    </div>
 </body>
 </html>
