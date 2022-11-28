@@ -94,11 +94,22 @@
     <ul>
         <li>NomSlicen := []TipoDato{ValoresInt} &larr; Inicia en posicion 1</li>
         <li>Funcion Append: Permite agregar mas datos al Slicen. Ejm: numeros=append(numeros &larr; Slicen ya declarado, 4 &larr; Valor nuevo)</li>
-        <li></li>
     </ul>
     <h3>Funcion Make</h3>
     <p>NomFuncion := make([]TipoDato, Longitud &larr;  Si ponemos cero queda un array automatico, Capacidad &larr; Maximo permitdo)</p>
 
-    
+    <h3>Mapas</h3>
+    <p>Parecido a los diccionarios en diferentes lenguajes de programacion. Su estructura es NomMapa:=make(<u>map</u>[TipoDatoClave] TipoDatoValorClave) &larr; Se debe asignar los valores de forma manual para llenar el map. NomMapa[1]="String". <Strong>Ejm</Strong> dias:=make(map[int]string)... <strong>Carga de datos:</strong> dias[1]:="Domingo"</p>
+    <li><h3>Eliminar Valor de Map</h3> delete(NomMapa, Clave)</li>
+    <li>Con <u>len(NomMapa)</u> se determina el tamaño del mapa</li>
+    <li><h3>Convinando con vectores:</h3>Podemos crear indices muy extensos, tambien normalemente se crean interfaces. La estructura del almcenamiento de un vector en un map es: NomMapa:=make(map[TipoDatoClave]<u>[]</u>TipoDatoValorClave)...<strong>Ejm</strong> estudiantes:=make(map[string][]int)... <strong>Carga de datos:</strong> estudiantes["Alex"]=[]int{13,14,15,16}</li>
+
+    <h3>Condicionales</h3>
+    <ul>
+        <li><b>Boleano:</b> variable=variable1<strong>Comparacion</strong>variable2</li>
+        <li><b>Operadores logicos:</b> Not, And, Or<br><b>Not</b> = Devuelve el valor contrario de un booleano (...Println(<b>!</b>Booleano))<br><b>And</b>= Ambas setencias deben ser verdaderas (...Println(Booleano1 <b>&&</b> Booleano))<br><b>Or</b> = Ejecuta uno de los dos que sea verdadero (...Println(Booleano1 <b>||</b> Booleano))</li>
+        <li><b>If</b> La estructura es parecida a la de <u>Javascript</u>: if Condicion { ProcesoSiVerdad} elseif Condicion{} else {Proceso si contrario}<li><b>Declaracion de variables dentro el condicional</b> if NomVariable1, NomVariable2 := Valor1, Valor2; NomVariable1 Comparacion{Operacion}</li></li>
+        <li><b></b></li>
+    </ul>
 </body>
 </html>
