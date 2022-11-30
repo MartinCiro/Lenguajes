@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--link rel="stylesheet" href="style.css"-->
+    <!--<link rel="stylesheet" href="style.css">-->
     <link rel="shortcut icon" href="https://www.pngitem.com/pimgs/b/424-4242146_gopher-png.png" type="image/x-icon">
     <title>Go</title>
 </head>
 <body>
-        <h1>Go</h1>
-
+    <h1>Go</h1>
+<div class="Basic">
+    <h2>Estructura base</h2>
     <h3>Comentarios</h3>
     <p>Se insertan con &nbsp;<span class="ipr">//</span>&nbsp;y bloques &nbsp;<span class="ipr">/*t*/</span></p>
 
@@ -33,63 +34,68 @@
     <p>Usamos \n para salto de linea, \t para espaico tabular</p>
 
     <h3>Formateo de datos</h3>
-    <p>Dentro del print se concatena el <strong>%s (Insertar string)</strong>, %d (Insertar int) seguido de las variables con el mismo formato insertado. <b>...print("Hola, %s y su edad es: %d \n", nombre <u>(String)</u>, edad <u>(Int)</u>)</b> para insertar valor sin referencia usamos <b>%v</b> ver manual para más referencias</p>
+    <p>Dentro del print se concatena el <strong>%s (Insertar string)</strong>, %d (Insertar int) seguido de las variables con el mismo formato insertado. <b>...print(&quot;Hola, %s y su edad es: %d \n&quot;, nombre <u>(String)</u>, edad <u>(Int)</u>)</b> para insertar valor sin referencia usamos <b>%v</b> ver manual para más referencias</p>
 
     <h3>Guardar en una variable el valorformateado</h3>
-    <p>NomVariable = fmt.<u>Sprintf</u>("Ejemplo anterior")</p>
+    <p>NomVariable = fmt.<u>Sprintf</u>(&quot;Ejemplo anterior&quot;)</p>
 
     <h3>Tipo de datos</h3>
     <ul>
-        <li><b>>uin8-uit64:</b> Numeros positivos</li>
+        <li><b>>uin8&ndash;uit64:</b> Numeros positivos</li>
         <li>Float</li>
         <li>String</li>
         <li>Boleano</li>
-        <a href="../source/Go/Archivos/PDF/Programacion-Go-lang.pdf" target="_blank" rel="noopener noreferrer">
+        <a href="../source/Go/Archivos/PDF/Programacion&ndash;Go&ndash;lang.pdf" target="blank" rel="noopener noreferrer">
+            <a href="http://" target="_blank" rel="noopener noreferrer"></a>
             <button>Mas tipos de datos (Pg.20)</button>
         </a>
     </ul>
 
     <h3>Obtener el tipo de dato</h3>
-    <p>...println(<u>"%T"</u>,NomVariable)</p>
+    <p>...println(&quot;<u>%T</u>&quot;,NomVariable)</p>
 
     <h3>Pedir datos por teclado</h3>
-    <p>...fmt.print("Ingrese") ...fmt.<u>scanln</u>(<b><u>&</u></b>NomVariable)</p>
+    <p>...fmt.print(&quot;Ingrese&quot;) ...fmt.<u>scanln</u>(<b><u>&amp;</u></b>NomVariable)</p>
     
     <h3>Mostrar mensaje por pantalla</h3>
     <p>Debemos importar la libreria &nbsp;<span class="ipr">fmt</span>&nbsp;y precedido un &nbsp;<span class="ipr">print</span>/&nbsp;<span class="ipr">println</span>/&nbsp;<span class="ipr">printf</span></p>
-    <p class="sub">import "fmt"<br>fun main(){<br>fmt.println("TextoQuiero")<br>}</p>
+    <p class="sub">import "fmt"<br>fun main(){<br>fmt.println(&quot;TextoQuiero&quot;)<br>}</p>
 
     <div class="fmt">
         <p>El paquete&nbsp;<strong>fmt</strong>&nbsp;es usado para mas que el print</p>
     </div>
 
     <h3>Operadores aritmeticos</h3>
-    <p>Deben ser enteros, se hace uso de los signos de operacion &nbsp;<span class="ipr">+ - * /</span></p>
+    <p>Deben ser enteros, se hace uso de los signos de operacion &nbsp;<span class="ipr">+ &ndash; * /</span></p>
 
     <h3>Funciones</h3>
     <p>Se declara con &nbsp;<span class="ipr">func</span>&nbsp;NomFuncion(Parametros) TipoVariableRetornar{ Operacion (Normalmente se usa la palabra <u>return</u> para evitar agregar exceso de variables en el codigo)}</p>
     <ul>
         <li><b>Cantidad indefinida:</b> func</span>&nbsp;NomFuncion(ParametrosEntrada ...&larr;'Quiere decir que no se sabe la cantidad exacta de los valores ingresados' TiposDatos) { Operacion (Normalmente se usa la palabra <u>return</u> para evitar agregar exceso de variables en el codigo)}</li>
         <li><b>Retornar multiples valores:</b> Despues de la declaracion de los parametros se declara que valores va a retornar<br>...(parametros)(Tipo1Out, Tipo2Oudt){Operacion}</li>
-        <li><b>Recursivas: </b>Retorna a si mismo el valor de la propia funcion. <b>Ejm:</b><br>func factorial (n int) int{ if n == 0{return 1} f := n*<u>factorial(n-1)</u>factorial de <b>3</b> (3*2*1=6)}</li>
+        <li><b>Recursivas: </b>Retorna a si mismo el valor de la propia funcion. <b>Ejm:</b><br>func factorial (n int) int{ if n == 0{return 1} f := n*<u>factorial(n&ndash;1)</u>factorial de <b>3</b> (3*2*1=6)}</li>
         <li><b>Funcion Anonima:</b>func(){Proceso}()&larr;Dentro del main o desde otra funcion. Tambien se puede asignar a una variable NomVariable:=func(){} &larr; No es necesario los parentesis, a la hora de llamarla sí NomVariable()</li>
-        <li><b>Clousure: </b>Funcion que retorna otra funcion. func NomFuncion (NomVariable TipoDato) func (ValorRetornar TipoRetornar) Tipo{Operacion}. <b>Ejm:</b><br>func repe(n int) func(cadena string) string{return func(cadena string) string{return strings.repeat(cadena, n)}} &larr; Una funcion "anidada"</li>
-        <li><b>Punteros:</b> Hace uso de referencias por memoria. func NomFuncion(NomVariable *TipoDato){Operacion} &larr; Al llamarla en el main se hace uso del &. <b>Ejm:</b><br>func modificador(cadena *string){fmt.printf("%p\n", cadena) *cadena = "Hola desde la funcion"}...En el main:<br> func main(){cadena:="Hola mundo de go" fmt.printf("%p\n", cadena) fmt.prinln("Antes de la funcion: ",cadena) modificador(&cadena) fmt.prinln("Despues de la funcion:),cadena}</li>
+        <li><b>Clousure: </b>Funcion que retorna otra funcion. func NomFuncion (NomVariable TipoDato) func (ValorRetornar TipoRetornar) Tipo{Operacion}. <b>Ejm:</b><br>func repe(n int) func(cadena string) string{return func(cadena string) string{return strings.repeat(cadena, n)}} &larr; Una funcion &quot;anidada&quot;</li>
+        <li><b>Punteros:</b> Hace uso de referencias por memoria. func NomFuncion(NomVariable *TipoDato){Operacion} &larr; Al llamarla en el main se hace uso del &amp;. <b>Ejm:</b><br>func modificador(cadena *string){fmt.printf(&quot;%p\n&quot;, cadena) *cadena = &quot;Hola desde la funcion&quot;}...En el main:<br> func main(){cadena:=&quot;Hola mundo de go&quot; fmt.printf(&quot;%p\n&quot;, cadena) fmt.prinln(&quot;Antes de la funcion: &quot;,cadena) modificador(&amp;cadena) fmt.prinln(&quot;Despues de la funcion:),cadena}</li>
         <li><b>Errores:</b> existe un paquete para ello</li>
         <li><b>Variables globales:</b> Se difenen afuera de todas las fuciones, en la mayoria de ocasiones debajo de <u>import Packete</u> o </li>
         <li><b>Ejecutar despues del main</b> Se ejecuta al final, la palabra clave es defer. <b>Ejm:</b> ...main(){defer NomFuncion}</li>
-        <li><b>Leer archivo:</b> Hacemos uso del paquete OS</li>
-        <li><b></b></li>
+        <li><b>Leer archivo:</b> Hacemos uso del paquete OS.open(RutaPackete) se crea un slice para el almacenamiento tipo byte del archivo, luego se cargan los bytes del slice con el parametro read y el nombre del slice, despues lo convertimos a string. <b>Ejm:</b><br>contenido:=Make([]byte, 254)___long:=file.read(contenido)___ contenidoArchivo:=string(contenido:long)___ cerramos el archivo con file.close
+        <strong>file es una Variable Declarada Con EseNombre, no es palabra reservada</strong>
+        </li>
+        <li><b>Defer: </b>Ejecutar al final de los otros procesos</li>
+        <li><b>Funcion panic: </b> Solo para errores, cuando hay error detiene el proceso</li>
+        <li><b>Recover: </b>Controla todos los <u>panic</u>, No muestra el mensaje panic pero si un pequeño mensaje</li>
     </ul>
 
     <div class="info">
-        <a href="https://gobyexample.com/" target="_blank" rel="noopener noreferrer">
+        <a href="https://gobyexample.com/" target="blank" rel="noopener noreferrer">
             <button><u>Pagina Go</u></button>
         </a>
-        <a href="https://go.dev/tour/welcome/1" target="_blank" rel="noopener noreferrer">
+        <a href="https://go.dev/tour/welcome/1" target="blank" rel="noopener noreferrer">
             <button>Guía <u>Basica</u></button>
         </a>
-        <a href="../source/Go/Archivos/PDF/Curso-de-Go.pdf" target="_blank" rel="noopener noreferrer">
+        <a href="../source/Go/Archivos/PDF/Curso&ndash;de&ndash;Go.pdf" target="blank" rel="noopener noreferrer">
             <button>Curso de GO en PDF</button>
         </a>
     </div>
@@ -97,7 +103,7 @@
     <p>var NomArreglo [TamañoArregle]TipoDatos{ElementosSeparadospor<u>coma</u>}</p>
     <ul>
         <li>Arreglo Dinamico: ...NomArreglo[...]... Los tres puntos significa que es dinamico
-            <li>Asignar Dato en posicion: <u>Posicion:Valor</u> <b>Ejm:</b> 0:"Alex",</li>
+            <li>Asignar Dato en posicion: <u>Posicion:Valor</u> <b>Ejm:</b> 0:&quot;Alex&quot;,</li>
         </li>
         <li>Longitud: len(NomVector)</li>
         <li>Delimitar el tamaño de un vector asignado: NomNuevoVector:=NomArraty[PosicionesDesde:PosicionHasta] <b>Ejm:</b> subMonenda:=monedas[0:3]</li>
@@ -112,15 +118,15 @@
     <p>NomFuncion := make([]TipoDato, Longitud &larr;  Si ponemos cero queda un array automatico, Capacidad &larr; Maximo permitdo)</p>
 
     <h3>Mapas</h3>
-    <p>Parecido a los diccionarios en diferentes lenguajes de programacion. Su estructura es NomMapa:=make(<u>map</u>[TipoDatoClave] TipoDatoValorClave) &larr; Se debe asignar los valores de forma manual para llenar el map. NomMapa[1]="String". <Strong>Ejm</Strong> dias:=make(map[int]string)... <strong>Carga de datos:</strong> dias[1]:="Domingo"</p>
+    <p>Parecido a los diccionarios en diferentes lenguajes de programacion. Su estructura es NomMapa:=make(<u>map</u>[TipoDatoClave] TipoDatoValorClave) &larr; Se debe asignar los valores de forma manual para llenar el map. NomMapa[1]=&quot;String&quot;. <Strong>Ejm</Strong> dias:=make(map[int]string)... <strong>Carga de datos:</strong> dias[1]:=&quot;Domingo&quot;</p>
     <li><h3>Eliminar Valor de Map</h3> delete(NomMapa, Clave)</li>
     <li>Con <u>len(NomMapa)</u> se determina el tamaño del mapa</li>
-    <li><h3>Convinando con vectores:</h3>Podemos crear indices muy extensos, tambien normalemente se crean interfaces. La estructura del almcenamiento de un vector en un map es: NomMapa:=make(map[TipoDatoClave]<u>[]</u>TipoDatoValorClave)...<strong>Ejm</strong> estudiantes:=make(map[string][]int)... <strong>Carga de datos:</strong> estudiantes["Alex"]=[]int{13,14,15,16}</li>
+    <li><h3>Convinando con vectores:</h3>Podemos crear indices muy extensos, tambien normalemente se crean interfaces. La estructura del almcenamiento de un vector en un map es: NomMapa:=make(map[TipoDatoClave]<u>[]</u>TipoDatoValorClave)...<strong>Ejm</strong> estudiantes:=make(map[string][]int)... <strong>Carga de datos:</strong> estudiantes[&quot;Alex&quot;]=[]int{13,14,15,16}</li>
 
     <h3>Condicionales</h3>
     <ul>
         <li><b>Boleano:</b> variable=variable1<strong>Comparacion</strong>variable2</li>
-        <li><b>Operadores logicos:</b> Not, And, Or<br><b>Not</b> = Devuelve el valor contrario de un booleano (...Println(<b>!</b>Booleano))<br><b>And</b>= Ambas setencias deben ser verdaderas (...Println(Booleano1 <b>&&</b> Booleano))<br><b>Or</b> = Ejecuta uno de los dos que sea verdadero (...Println(Booleano1 <b>||</b> Booleano))</li>
+        <li><b>Operadores logicos:</b> Not, And, Or<br><b>Not</b> = Devuelve el valor contrario de un booleano (...Println(<b>!</b>Booleano))<br><b>And</b>= Ambas setencias deben ser verdaderas (...Println(Booleano1 <b>&amp;&amp;</b> Booleano))<br><b>Or</b> = Ejecuta uno de los dos que sea verdadero (...Println(Booleano1 <b>||</b> Booleano))</li>
         <li><b>If</b> La estructura es parecida a la de <u>Javascript</u>: if Condicion { ProcesoSiVerdad} elseif Condicion{} else {Proceso si contrario}<li><b>Declaracion de variables dentro el condicional</b> if NomVariable1, NomVariable2 := Valor1, Valor2; NomVariable1 Comparacion{Operacion}</li></li>
         <li><b>Switch</b> Switch{ case Condicion: Operacion. default: Operacion.}<br>
             <ul><li>Switch NomVariable{ case 1, 2, 3:Operacion. default: Operacion.}</li></ul>
@@ -128,17 +134,17 @@
     </ul>
     <h3>Operadores de asignacion</h3>
     <ul>
-        <li><b>Operaciones basicas en asignacion:</b> variable1 <u><b>+=</b></u> valorSumar &larr; Toma el valor de variable1 y le suma valorSumar, aplica la misma extructura para las demas operaciones (Resta: <u><b>-=</b></u>) &larr; Igual con los demás</li>
+        <li><b>Operaciones basicas en asignacion:</b> variable1 <u><b>+=</b></u> valorSumar &larr; Toma el valor de variable1 y le suma valorSumar, aplica la misma extructura para las demas operaciones (Resta: <u><b>&ndash;=</b></u>) &larr; Igual con los demás</li>
     </ul>
 
     <h3>Operadores de incremento y decremento</h3>
-    <p>Para ello usamos Vriable<u>++</u> (no es necesario guardarlo en una variable) &larr; Misma estructura para el decremento (--)</p>
+    <p>Para ello usamos Vriable<u>++</u> (no es necesario guardarlo en una variable) &larr; Misma estructura para el decremento (&ndash;&ndash;)</p>
     
     <h3>Bucles</h3>
     <p>No existe <strong>while</strong></p>
     <ul>
         <li><b>For:</b>for VariableControl; condicion; VariableControl{Operacion.}</li>
-        <li><b>Break y continue</b> <u>Break</u> "rompe" la operacion en determinado punto. <u>Continue</u> "Salta/Continua" con la siguiente iteracion</li>
+        <li><b>Break y continue</b> <u>Break</u> &quot;rompe&quot; la operacion en determinado punto. <u>Continue</u> &quot;Salta/Continua&quot; con la siguiente iteracion</li>
         <li><b>For Each</b> Normalemente se usa en <u>mapas</u> o en <u>Vectores</u> for Indice, Elementos := range NomVector{fmt.println(Indice, Elementos)}</li>
     </ul>
 
@@ -151,20 +157,21 @@
     <ul>
         <li><b>ToUpper (Mayusculas):</b> func NomFuncion (Parametros TipoDato){Parametro=<u>string</u>.ToUpper(Parametro)}</li>
         <li><b>ToLower (Minusculas):</b> func NomFuncion (Parametros TipoDato){Parametro=<u>string</u>.ToLower(Parametro)}</li>
-        <li><b>Remplazar Caracter:</b> func NomFuncion (Parametros TipoDato){Parametro=<u>string</u>.Replace(Parametro,"LetraRemplazar", "Remplazo", NumeroDeReemplazos)}<ul><li><b>Remplazar todo (espacios):</b> Hacemos uso de la palabra clave replaceAll(parametro, "Remplazar", "Remplazo")</li></ul></li>
+        <li><b>Remplazar Caracter:</b> func NomFuncion (Parametros TipoDato){Parametro=<u>string</u>.Replace(Parametro,&quot;LetraRemplazar&quot;, &quot;Remplazo&quot;, NumeroDeReemplazos)}<ul><li><b>Remplazar todo (espacios):</b> Hacemos uso de la palabra clave replaceAll(parametro, &quot;Remplazar&quot;, &quot;Remplazo&quot;)</li></ul></li>
     </ul>
         <h3>Invertir String</h3>
         <ol>
-            <li>Convetir a un arreglo "strings.Split(NomVariableString, "" &larr; hará que cada caracter quede guardado en una posicion del vector)"</li>
-            <li>Convertirlo a slice: NomNuevoVector := make([]string,0)<br>for i=:len(NomArregloArriba👆)-1, i>=0, i-- { NomVectorDeArriba = <u>append</u>(NomArray2, NomArrai1[1]) }</li>
-            <li>Convertirlo en string: return.String.<u>join</u>(NomArray2, "")</li>
+            <li>Convetir a un arreglo &quot;strings.Split(NomVariableString, &quot;&quot; &larr; hará que cada caracter quede guardado en una posicion del vector)&quot;</li>
+            <li>Convertirlo a slice: NomNuevoVector := make([]string,0)<br>for i=:len(NomArregloArriba👆)&ndash;1, i>=0, i&ndash;&ndash; { NomVectorDeArriba = <u>append</u>(NomArray2, NomArrai1[1]) }</li>
+            <li>Convertirlo en string: return.String.<u>join</u>(NomArray2, &quot;&quot;)</li>
         </ol>
         <h3>Formatear mapas/vectores (Strconv)</h3>
-        <p>Su esctuctura es "NomVariable := strconv.Atoi &larr;ConvertirAEntero(NomVariableConvertir)"</p>
+        <p>Su esctuctura es &quot;NomVariable := strconv.Atoi &larr;ConvertirAEntero(NomVariableConvertir)&quot;</p>
     </div>
     <h3>Manejo de errores</h3>
     <p>se crea un condicion comparando el valor nil</p>
+</div>
 
-
+    <h3>POO</h3>
 </body>
 </html>
