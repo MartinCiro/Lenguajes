@@ -41,7 +41,7 @@
 
     <h3>Tipo de datos</h3>
     <ul>
-        <li><b>>uin8&ndash;uit64:</b> Numeros positivos</li>
+        <li><b>uin8&ndash;uit64:</b> Numeros positivos</li>
         <li>Float</li>
         <li>String</li>
         <li>Boleano</li>
@@ -186,6 +186,20 @@
         <li>Herencia: Cosas que se repiten se heredan</li>
         <li>Polimorfismo</li>
     </ol>
+    <h3>Creando una lista de tareas</h3>
+    <p>Cada tarea va a ser una estructura, contruimos a partir de la misma las tareas o los objetos y luego las guardamos en listas</p>
+    <ul>
+        <li><b>Usamos la palabra reservada type</b> seguida de struct, declaramos variables</li>
+        <li><b>Creamos los el mlde y los metodos</b></li>
+        <li><b>Aplicamos toPrint</b> para indicar que el valor de la "Funcion" es imprimible</li>
+        <li><b>Hacemos llamado a la tarea creada:</b>Ejm:<br><u>type</u> Task struct{<br>name string<br>desc string<br>completed bool<br>}<br>func (t *Task) toPrint(){<br>fmt.Printf("Nombre: %s\nDescripcion: %s\nCompletado: %t\n",t.name, t.desc, t.completed)<br>}<br>func (t *Task) markCompleted(){ //Cambiar el estado por defecto de completed<br>t.completed = true)<br>} //Modelo construido y sus metodos<br>func main(){<br>t1.Task{<br>name:"Curso de Go",<br>desc:"Completar este mes",<br>completed:flse,<br>}<br>}<br><b>Imprimo la tarea con: </b>t1.toPrint()</li>
+        <li><b>Listar tarea:</b> Creamos otra tarea almacenando un slice<br>type TaskList struct<br>{ tasks [] *Task<br>}<br></li>
+        <li><b>Recibir un objeto de tipo tarea:</b> Usamos la sintaxis appendTask.<br> func (tl *TaskList) <u>appendTask</u>(t *Task){<br>tl.tasks = append(tl.tasks, t}<br></li>
+        <li><b>Eliminar un objeto</b> Misma estructura, reemplazar appendTask por removeTask</li>
+    </ul>
+    <h3>Relacion de uno a uno</h3>
+    <p>Así como en sql se crean relacion, para este ejemplo crearemos dos estructuras y las relaciones de uno a uno</p>
+    <ul></ul>
 </div>
 </body>
 </html>
