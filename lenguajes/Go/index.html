@@ -199,7 +199,26 @@
     </ul>
     <h3>Relacion de uno a uno</h3>
     <p>Así como en sql se crean relacion, para este ejemplo crearemos dos estructuras y las relaciones de uno a uno</p>
-    <ul></ul>
+    <ul>
+        <li>type User struct{nombre string___ email string___ activo bool___}</li>
+        <li>type Student struct{user <u>User</u>___ codigo string___ }</li>
+        <li>funcion main (){alex:= User{___ nombre:"Alex",___ email:"alex@gmail.com",___ activo:true}}</li>
+    </ul>
+    <h3>Relacion de uno a muchos</h3>
+    <ul>
+        <li>type Curso struct{titulo string___ video []video___}&larr;El curso tiene varios videos</li>
+        <li>type Video struct{titulo string___ curso Curso}&larr;Un video pertenece a un solo curso</li>
+        <li>func main(){___ video1:= Video{titulo: "01-introduccion"___ video2:= Video{titulo: "02-instalacion"}___ curso:= Curso{titulo: "curso de go",___ videos: []Video{video1, video2},&larr;vamos a tener muchos video}___ video1.curso=curso___ video2.curso=curso___ fmt.prinln(video1.curso.titulo)}</li>
+    </ul>
+    <h3>Interfaces</h3>
+    <p>Maneja los metodos-estructuras y mostrar de forma diferente cada una</p>
+    <ul>
+        <li>type Perro struct{}<br>type Pez struct{}<br>type Pajaro struct{}</li>
+        <li>func (*Perro) mover() string{___ return "Soy un perro y camino"___ }<br>func (*Pez) mover() string{___ return "Soy un pez y nado"___ }<br>func (*Pajaro) mover() string{___ return "Soy un pajaro y vuelo"___ }</li>
+        <li>type animal <u>interface</u>{___ mover() string___ }&larr;Creamos un interface(funcion) en las primeras lineas de codigo para controlar la impresion y los objetos</li>
+        <li>func moverAnimal( <b>animal</b> Animal){___ fmt.println(animal.mover())} &larr;Recibimos el interfaces</li>
+        <li>func main (){___ perror:=Perro{}___ moverAnimal{&perror}___ pez:=Pez{}___ moverAnimal{&Pez}___ pajaro:=Pajaro{}___ moverAnimal{&pajaro}___ }&larr;Crear estructura de animales</li>
+    </ul>
 </div>
 </body>
 </html>
