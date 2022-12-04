@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@600&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+}
+th {
+    color: brown;
+    font-size: 2vmax;
+    overflow: hidden;
+}
+h1 {
+    text-align: center;
+    font-size: 3vmax;
+}
+table{
+    display: grid;
+    width: 100%;
+}
+
+tr{
+    display: grid;
+    grid-template-columns: 22% 39% 39%;
+    text-align: center;
+}
+.unCol{
+    display: grid; 
+    grid-template-columns: 100%;
+}
+td {
+    font-size: 1.5vmax;
+    overflow: hidden;
+}
+.dos{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
