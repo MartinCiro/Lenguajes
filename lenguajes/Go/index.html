@@ -219,8 +219,29 @@
         <li>func moverAnimal( <b>animal</b> Animal){___ fmt.println(animal.mover())} &larr;Recibimos el interfaces</li>
         <li>func main (){___ perror:=Perro{}___ moverAnimal{&perror}___ pez:=Pez{}___ moverAnimal{&Pez}___ pajaro:=Pajaro{}___ moverAnimal{&pajaro}___ }&larr;Crear estructura de animales</li>
     </ul>
+    <h3>Clases privadas o publicas</h3>
+    <p>Las clases privadas empiezan por Minusculas, las publicas son lo contrario</p>
     <h3>1. Encapsulamiento</h3>
     <p>Se hacen publicos con la primera inicial</p>
+
+    <h3>Getter y setter</h3>
+    <p>Se crea un metodo el cual nos obtiene atributos privados de una clase. get  obtiene, set cambia/envia<br>Ejm:</p>
+    <ol>
+        <li>Se declara el atributo <b>get/set</b> dentro del metodo</li>
+        <li>func (p *Personas) <b>GetNombre</b>() string {<br>&emsp;&ensp;return p.nombre<br>}</li>
+        <li>func (p *Personas) <b><u>Set</u>Nombre</b>(nombre string) {<br>&emsp;&ensp;p.nombre=nombre<br>}</li>
+        <li>El <b>puntero</b> indica que se heredaran las propiedades de Personas y al crear sus metodos se asignan como privados pero sus valores podran ser consultados de forma publica desde cualquier lugar del codigo</li>
+        <li>Dentro del main o para <b>hacer el llamado/ver atributo</b> fmt.Println(p1.GetNombre())<br>Asignacion de valor: p1.SetNombre("Roel")</li>
+    </ol>
+
+    <h3>Uso de paquetes de terceros</h3>
+    <p>Primero lo importamos "go get github.com/donvito/hellomod@v1.0.0" <a href="https://github.com/donvito/hellomod/tree/master" target="_blank" rel="noopener noreferrer">(Ver Ejemplo)</a><br> En el main hacemos llamado con "import Url"</p>
+
+    <h3>Concurrencia</h3>
+    <p>Se ejecuta secuencialmente, se demora más <b>(Sin Concurrencia)</b>, con la concurrencia se hace todo <u>al mismo tiempo</u>, para ello usamos el parametro "go" en la instruccion qu eesta recorriendo el arreglo/struct<br>Ejm:<br>for _, servidor := range servidores {<br>&emsp;&ensp;<u>go</u> revisarServidor(servidor)<br>}</p>
+    <h3>Cancales en concurrencia</h3>
+    <p>Usamos chanels para hacer se comuniquen los hilos y nos den resultados de la consulta echa, se hace uso del atributo <b>make(chan TipoDatoPasar)</b> Ejm: canal := make(chan string) &larr; Recibe String porque la funcion del url (servidor) esta en ese tipo de dato</p>
+
 </div>
 </body>
 </html>
