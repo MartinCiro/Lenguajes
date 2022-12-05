@@ -242,6 +242,11 @@
     <h3>Cancales en concurrencia</h3>
     <p>Usamos chanels para hacer se comuniquen los hilos y nos den resultados de la consulta echa, se hace uso del atributo <b>make(chan TipoDatoPasar)</b> Ejm: canal := make(chan string) &larr; Recibe String porque la funcion del url (servidor) esta en ese tipo de dato</p>
 
+    <h3>Cover</h3>
+    <p>Nos permite administrar el porcentaje de testeo que se le ha echo el codigo, normalmente para llevar un control en las funciones y sus parametros. <b>Comando: </b><u>go test cover</u><br>Para crear un archivo que anexe el codigo faltante por restar se usa <u>go test -coverprofile=NombreQuiero.out</u> y para traducirlo usamos <u>go tool cover -func=NombreQuiero.out</u> &larr; Funciones testeadas ó <u>go tool cover -html=NombreQuiero.out</u> &larr; verde testeo, rojo sin testear</p>
+
+    <h3>Tiempo de ejecucion</h3>
+    <p>Podemos medir el tiempo de ejecucion y en donde la demora tiene un alto porcentaje de proceso, para ello usamos el parametro. <b>Comando: </b>go test <u>-cpuprofile</u>=cou.out y despues de que se genere el archivo procedemos a ejecutar <u>go tool <b>pprof</b> cou.out</u> No cargará una shell en donde ponemos <b>top</b> o <b>list Fibonacci</b> importamos con el comando <u>web</u> en <i>formato svg</i> ó <u>pdf</u> en <i>formato PDF</i></p>
 </div>
 </body>
 </html>
