@@ -248,5 +248,24 @@
     <h3>Tiempo de ejecucion</h3>
     <p>Podemos medir el tiempo de ejecucion y en donde la demora tiene un alto porcentaje de proceso, para ello usamos el parametro. <b>Comando: </b>go test <u>-cpuprofile</u>=cou.out y despues de que se genere el archivo procedemos a ejecutar <u>go tool <b>pprof</b> cou.out</u> No cargará una shell en donde ponemos <b>top</b> o <b>list Fibonacci</b> importamos con el comando <u>web</u> en <i>formato svg</i> ó <u>pdf</u> en <i>formato PDF</i></p>
 </div>
+<div class="web">
+    <h2>Desarrollo web</h2>
+    <p>Debemos hacer uso de servidores, crearemos una sesion local con el paquete http, cambiaremos el error de pagina fallida (443) por un hola mundo, <b>log.Fatal(http.ListenAndServe("localhost:8000", nil))</b> pero antes debemos añadir los Handler <b>http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){fmt.Fprintln(rw,"")})</b> &larr; Funcion vacia que envia los handler</p>
+    <ul>
+        <li>Get: Obtener informacion</li>
+        <li>Post: Guardar informacion</li>
+        <li>Put: Editar</li>
+        <li>Delete: Eliminar</li>
+    </ul>
+    <p>Para ver con que metodo estamos trabajando hacemos uso de .Method <b>Ejm: </b>fmt.Println("El metodo usado es:" + r.)</p>
+    <h3>Envio de errores</h3>
+    <p>http.Error(rw, "Este es un error", <u>http.StatusConflict</u>)</p>
+    <ul>
+        <li>Enviar argumentos por URL: se envia despues del ?. ?name=Alex&Age=26. Para ello debemos agregar la sentencia .URL. fmt.Println(r.URL)</li>
+        <li>Separa el URL de los argumentos: .URL.RawQuery.</li>
+        <li>Converir en una mapa: ...Println(r.URL.<u>Query</u>()) </li>
+        <li>Obtenemos el valor de la mapa haciendo uso de <b>Get</b> Ejm: name:=r.URL.Query().Get("Name")</li>
+    </ul>
+</div>
 </body>
 </html>
