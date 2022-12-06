@@ -267,8 +267,9 @@
         <li>Obtenemos el valor de la mapa haciendo uso de <b>Get</b> Ejm: name:=r.URL.Query().Get("Name")</li>
     </ul>
     <h3>Mux</h3>
-    <p>Al poner nil, trabaja en asignacion automatica, un mux es la asignacion de rutas a un handler, parecido al trabajo con http. mux:=http.<u>NewServerMux</u>()___ mux.HandleFunc("/", Hola)</p>
+    <p>Al poner nil, trabaja en asignacion automatica, un mux es la asignacion de rutas a un handler, parecido al trabajo con http. mux:=http.<u>NewServerMux</u>()___ mux.HandleFunc("/", Index)</p>
     <h3>Templates</h3>
+    <p>Creamos una funcion para hacer llamado a las paginas, usamos <u>template.parsefiles</u> Ejm:<br>func Index(rw http.ResponseWriter, r *http.Request){<br>&emsp;&ensp;template, err := template.ParseFiles("index.html")<br>&emsp;&ensp;//objeto<br>&emsp;&ensp;Usuario:=Usuarios{"Alex", 26}<br>&emsp;&ensp;if err != nil{<br>&emsp;&ensp;&ensp;panic(err)<br>&emsp;&ensp;} else {<br>&emsp;&ensp;&ensp;template.Execute(rw, Usuario)<br>&emsp;&ensp;}<br>}</p>
     
 </div>
 </body>
