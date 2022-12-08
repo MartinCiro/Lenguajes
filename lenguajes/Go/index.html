@@ -306,12 +306,12 @@
     </table>
     <table border="1" class="Condic">
         <thead>
-        <th style="display: grid; grid-template-columns: 100%;">Operadores logicos</th>
+        <th>Operadores logicos</th>
         </thead>
         <tbody>
         <tr>
-            <th>Template</th>
             <th>Go</th>
+            <th>Template</th>
         </tr>
         <tr>
             <td>eq</td>
@@ -341,6 +341,37 @@
         </tfoot>
         </tbody>
     </table>
+    <h3>Condicionales</h3>
+    <ul>
+        <li>If-Else se usa la estructura: {{if <u>not</u>.Activo Operacion}} {{else}} Operacion e indicamos en donde finaliza la condicion {{end}} En caso de usar operadores logicos debemos poner primero el operador logico: {{if (or .Activo .Admin)}} Operacion {{end}}</li>
+    </ul>
+    <h3>Ejecutar funciones</h3>
+    <p>Para ejecutar debemos modificar el parametro del servidor <u>"template.ParseFiles("index.html")"</u> y reemplazarlo por template.<u>New("Index.html").Funcs(NomFuncion)</u> pero antes se debe crear una mapa asignandole la funcion que se desea pasar. Ejm:</p>
+    <code>
+        func Saludar() string {<br>
+        &emsp;&emsp;&emsp;returns "Hola desde una funcion"<br>
+        }<br>
+        <p>En la funcion "index" agregamos una mapa de la funcion</p>
+        funciones:=template.FuncMap{<br>
+        &emsp;&emsp;&emsp;"saludar":Saludar,<br>
+        }
+        <br>
+        template, err := template.New("Index.html").Funcs(funciones).ParseFiles("index.html")
+    </code>
+    <h3>Herencia de plantillas</h3>
+    <p>Pasamos todo lo que se repite, para ello analicemos el siguiente ejemplo:</p>
+    <code>
+        {{ <u>define</u> "header" }} &larr; <b>define</b> "NomBloque"<br>
+            &lt;header&gt;
+                Contenido html
+            &lt;/header&gt; <br>
+        {{ end }}
+        <p>Despues de agregar el nuevo archivo con los atributos al codigo de go (index.html, base.html) procedemos a invovarlo en la pagina principal ({{template "NomBloque"}}</p> &larr; heredará el contenido del bloque
+    </code>
+
+    <h3>Funcion must (libreria template)</h3>
+    
+
 </div>
 </body>
 </html>
