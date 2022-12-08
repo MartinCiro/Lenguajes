@@ -45,7 +45,7 @@
         <li>Float</li>
         <li>String</li>
         <li>Boleano</li>
-        <a href="../source/Go/Archivos/PDF/Programacion&ndash;Go&ndash;lang.pdf" target="blank" rel="noopener noreferrer">
+        <a href="../source/Go/Archivos/PDF/Programacion-Go-lang.pdf" target="blank" rel="noopener noreferrer">
             <a href="http://" target="_blank" rel="noopener noreferrer"></a>
             <button>Mas tipos de datos (Pg.20)</button>
         </a>
@@ -76,7 +76,7 @@
         <li><b>Recursivas: </b>Retorna a si mismo el valor de la propia funcion. <b>Ejm:</b><br>func factorial (n int) int{ if n == 0{return 1} f := n*<u>factorial(n&ndash;1)</u>factorial de <b>3</b> (3*2*1=6)}</li>
         <li><b>Funcion Anonima:</b>func(){Proceso}()&larr;Dentro del main o desde otra funcion. Tambien se puede asignar a una variable NomVariable:=func(){} &larr; No es necesario los parentesis, a la hora de llamarla sí NomVariable()</li>
         <li><b>Clousure: </b>Funcion que retorna otra funcion. func NomFuncion (NomVariable TipoDato) func (ValorRetornar TipoRetornar) Tipo{Operacion}. <b>Ejm:</b><br>func repe(n int) func(cadena string) string{return func(cadena string) string{return strings.repeat(cadena, n)}} &larr; Una funcion &quot;anidada&quot;</li>
-        <li><b>Punteros:</b> Hace uso de referencias por memoria. func NomFuncion(NomVariable *TipoDato){Operacion} &larr; Al llamarla en el main se hace uso del &amp;. <b>Ejm:</b><br>func modificador(cadena *string){fmt.printf(&quot;%p\n&quot;, cadena) *cadena = &quot;Hola desde la funcion&quot;}...En el main:<br> func main(){cadena:=&quot;Hola mundo de go&quot; fmt.printf(&quot;%p\n&quot;, cadena) fmt.prinln(&quot;Antes de la funcion: &quot;,cadena) modificador(&amp;cadena) fmt.prinln(&quot;Despues de la funcion:),cadena}</li>
+        <li><b>Punteros:</b> Hace uso de referencias por memoria, parecido a los constructores, se encarga de unir por medio de puntos fisicos (valores en memoria), su declaracion es: func NomFuncion(NomVariable *TipoDato){Operacion} &larr; Al llamarla en el main se hace uso del &amp;. <b>Ejm:</b><br>func modificador(cadena *string){fmt.printf(&quot;%p\n&quot;, cadena) *cadena = &quot;Hola desde la funcion&quot;}...En el main:<br> func main(){cadena:=&quot;Hola mundo de go&quot; fmt.printf(&quot;%p\n&quot;, cadena) fmt.prinln(&quot;Antes de la funcion: &quot;,cadena) modificador(&amp;cadena) fmt.prinln(&quot;Despues de la funcion:),cadena}</li>
         <li><b>Errores:</b> existe un paquete para ello</li>
         <li><b>Variables globales:</b> Se difenen afuera de todas las fuciones, en la mayoria de ocasiones debajo de <u>import Packete</u> o </li>
         <li><b>Ejecutar despues del main</b> Se ejecuta al final, la palabra clave es defer. <b>Ejm:</b> ...main(){defer NomFuncion}</li>
@@ -95,7 +95,7 @@
         <a href="https://go.dev/tour/welcome/1" target="blank" rel="noopener noreferrer">
             <button>Guía <u>Basica</u></button>
         </a>
-        <a href="../source/Go/Archivos/PDF/Curso&ndash;de&ndash;Go.pdf" target="blank" rel="noopener noreferrer">
+        <a href="../source/Go/Archivos/PDF/Curso-de-Go.pdf" target="blank" rel="noopener noreferrer">
             <button>Curso de GO en PDF</button>
         </a>
     </div>
@@ -174,16 +174,17 @@
 <div class="Basic2">
     <h3>POO</h3>
     <ol>
-        <li>struct (Molde): Iguales a clases. type NomStruct struct{Atributos}</li>
+        <li>struct (Molde): Iguales a clases. type NomStruct struct{Variable TipoDato}</li>
         <li>Propiedades (Atributos)</li>
         <li>Métodos (Objetos): func (ReferenciaNomStruct) NomMetodo(){}</li>
-        <li>Objetos (Objetos): Tiene propiedades(Nombre, color) y comportamientos(Girar a la derecha, qué hace). NomVariable := NomStruct{Atributos} ó en lineas <u>separadas</u> por comas</li>
+        <li>Objetos (Objetos): Tiene propiedades(Nombre, color) y comportamientos(Girar a la derecha, qué hace). NomVariable := NomStruct{Atributos} ó en lineas <u>separadas</u> por comas<br>Hay dos formas de crear los objetos<br>var NomNuevaVari NomClase<br>NomNuevaVari.NomAtribuClase=AsignacionNum<br>La segunda forma es: NomNuevaVari := &NomClase{NomAtribuClase: AsignacionNum}</li>
+        <li>Constructor: En go los constructores no existen, sin embargo se pueden crear(parecidos) por medio de funciones. Un constructor construye algo, es el que se encarga inicializar los atributos de la clase en cada objeto, el nuevo objeto ejecutara el fragmento de codigo independientemente de los valores cargados en el nuevo objeto.<b>Ejm:</b><br>class Coche(){<br>&emsp;&emsp;int numeroDeRuedas;<br><br>&emsp;&emsp;Coche(){<br>&emsp;&emsp;&emsp;&emsp;numeroDeRuedas=4;<br>&emsp;&emsp;}<br>}<br><br>new Coche()</li>
     </ol>
     <h3>Pilares de poo</h3>
     <ol>
         <li>Encapsulamiento</li>
         <li>Abstracción: Extraemos en un modelo un solo atributo del objeto</li>
-        <li>Herencia: Cosas que se repiten se heredan</li>
+        <li>Herencia: Cosas que se repiten se heredan. Se crea una nueva clase con los atributos de la clase padre</li>
         <li>Polimorfismo</li>
     </ol>
     <h3>Creando una lista de tareas</h3>
