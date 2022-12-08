@@ -373,5 +373,20 @@
     
 
 </div>
+<div class="gui">
+    <h2>Interfaces graficas GUI</h2>
+    <p>Para la creacion de una interfaz grafica hacemos uso del paquete <b>fyne</b>. Para preparar el entorno seguimos las instrucciones de este <a href="https://developer.fyne.io/started/" target="_blank" rel="noopener noreferrer">blog</a>. En caso de error al momento de hacer la instalacion del paquete hacer la instalacion como si fuese la version 1.16 de Go</p>
+    <p>Creamos una instancia dentro de la funcion principal que hace referencia a la aplicacion</p>
+    <code>
+        func main() {<br>
+        &emsp;&emsp;&emsp;myApp := app.New()<br>
+        &emsp;&emsp;&emsp;myWindow:= myApp.NewWindow("Titulo de la ventanta")<br>
+        &emsp;&emsp;&emsp;myWindow.SetContent(widget.NewLabel("Hola mundo"))<br>
+        &emsp;&emsp;&emsp;myWindow.ShowAndRun()<br>
+        }
+    <p>Como resultado tendremos:</p><img src="../source/Go/img/ResGui1.jpg" alt="">
+    </code>
+    
+</div>
 </body>
 </html>
