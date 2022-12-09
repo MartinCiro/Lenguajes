@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/MartinCiro/SenaProyects/gh-pages/docs/media/icons/Logo1.png" type="image/x-icon">
+    <title>Tabla MySQL y sqlite3</title>
+</head>
+<body>
+    <h1>Comandos probados de MySQL y sqlite3</h1>
+    <table border=".1vw">
+
+        <tr style="display: grid; grid-template-columns: 22% 78%;">
+            <th>Registros (filas)⬇️<br>Campos (columnas)➡️</th>
+            <th>Comando</th>
+        </tr>
+        <tr style="color: red;">
+        <!--Inserto los titulos de la tabla-->
+        <th>Funcion</th>
+        <th>MySQL</th>
+        <th>PostgreSQL</th>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Limpiar pantalla</p></td>
+            <td><p>system clear; Linux | system cls; Windows</p></td>
+            <td><p>\! clear</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Comentarios</p></td>
+            <td><p>-- texto a ser ignorado | /* bloque a ignorar*/</p></td>
+            <td><p>--</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Crear un usuario:</p></td>
+            <td><p>create user nombreusuario@host identified by 'pass';</p></td>
+            <td><p>sudo -iu postgres createuser -P --interactive NomConsola</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Asignacion de permisos:</p></td>
+            <td><p>grant all privileges on *.* to 'user'@'host';</p></td>
+            <td><p>Se asigna al crear el usuario.</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Listar bases existentes:</p></td>
+            <td><p>show databases;</p></td>
+            <td><p>Comando "ls" en directorio a traves de terminal</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Crear Base:</p></td>
+            <td><p>create database NomBase;</p></td>
+            <td><p>createdb NomBase -O RolDestino</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Usar base:</p></td>
+            <td><p>use NomBase;</p></td>
+            <td><p>.open NomBase o usar 👆</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Ver Nombre Columna:</p></td>
+            <td><p>Automatico.</p></td>
+            <td><p>.header on</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Ver Filas con espaciado:</p></td>
+            <td><p>Automatico.</p></td>
+            <td><p>.mode column</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Crear tabla:</p></td>
+            <td><p>create table NomTabla (NomCampo Tipo(AnchoMaximo), Nom2 Tipo2(AnchoMaximo));</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Cambiar Motor de base (estatica, Dinamica, Comprimida) MyISAM</p></td>
+            <td><img src="../source/SQL/img/TablasMyISAM.PNG" usemap="#TaMyISA"></td>
+            <td><p>No aplica</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Motor Merge</p></td>
+            <td><img src="../source/SQL/img/MotorMerge.PNG" usemap="#MotorMerge"></td>
+            <td><p>No aplica</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Mostrar motores disponibles</p></td>
+            <td><img src="../source/SQL/img/MotoresDis.PNG" usemap="#MotoresDis"></td>
+            <td><p>No aplica</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Ver motor en uso</p></td>
+            <td><img src="../source/SQL/img/MotorActual.PNG" usemap="#MotorActual"></td>
+            <td><p>No aplica</p></td>
+        </tr>
+        
+        <tr class="unCol">
+            <td class="fn"><p>Asignar motor a tabla existente</p></td>
+            <td><img src="../source/SQL/img/AsignarMotor.PNG" usemap="#MotorMerge"></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Ver campos de la tabla:</p></td>
+            <td><p>describe NomTabla;</p></td>
+            <td><p>.schema NomTabla</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Ver tablas existentes</p></td>
+            <td><p>show full tables from NomBase;</p></td>
+            <td><p>select * from sqlite_master where type = "table";</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Insertar datos en Tabla</p></td>
+            <td><p>insert into NomTabla ('NomCampo','NomCampo2') values ('NomRegistroNuevo','NomRegistro2Nuevo'));</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Eliminar los registros de una Tabla</p></td>
+            <td><p>delete from NomTabla where NomCampo='NomRegistro';</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Eliminar Tabla</p></td>
+            <td><p>drop table NomCampo;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Concatenar</p></td>
+            <td><p>update NomTb=<u>concat</u>(NomCampo,'AcOncatenar') condicion;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Insertar Campo</p></td>
+            <td><p>alter table NomTabla add column NomRegistro TipoDato;</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Eliminar Base</p></td>
+            <td><p>drop database NomBase;</p></td>
+            <td><p>Eliminacion manual</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Consultar datos en tabla</p></td>
+            <td><p>select * from NomTabla;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Consultar datos en tabla por Registro</p></td>
+            <td><p>select * from NomTabla where NomCampo='Filtro';</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Limitar consultar datos en tabla</p></td>
+            <td><p>select * from NomTabla limit NumLim;</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Importar Datos</p></td>
+            <td><p>load data infile 'SepararRutaConDosBarras' into table NomTabla;
+                <br><a href="https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client" target="_blank" rel="noopener noreferrer">Solo si error:</a> SET GLOBAL local_infile=1; | quit | mysql --local-infile=1 -u user -p | load data local infile '/path/InscripcionesMySQL.txt' into table Inscripciones;</p></td>
+            <!-- load data infile '/home/ciro/Música/mySql/InscripcionesMySQL' Inscripciones; -->
+            <td><p>.mode csv | .import 'RutaArch'</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Filtrar Datos <u>con</u> Repeticion</p></td>
+            <td><p>select NomColumna, NomColumna2 from NomTabla order by NomCampo, NomCampo2</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Filtrar Datos <u>sin</u> Repeticion </p></td>
+            <td><p>select <u>distinct</u> NomColumna... 👆</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Filtrar Ascendente</p></td>
+            <td><p>select NomColumna, NomColumna2 (ó *) from NomTabla order by NomCampo/NumCampo asc;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Filtrar Descendente</p></td>
+            <td><p>select NomColumna, NomColumna2 from NomTabla order by NomCampo/NumCampo desc;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Contar coincidencias</p></td>
+            <td><p>select count(*) from NomTabla;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Contar sin Repetir</p></td>
+            <td><p>select count(distinct NomCampo) from NomTabla;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Contar con condicion</p></td>
+            <td><p>select count(*) from (select * from NomTabla where condicion) as ALIAS;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Contar Repeticiones en campo</p></td>
+            <td><p>seleccionar campo1, campo2, campoContar...<br>select campo1, campo2, count(*) from NomTabla group by campo1;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Numero-Nombre mayor</p></td>
+            <td><p>select max(NomCampo) from NomTabla;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Numero-Nombre menor</p></td>
+            <td><p>select min(NomCampo) from NomTabla;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Operadores aritmeticos</p></td>
+            <td><p>select Operacion (suma, multiplicacion, modulo, etc);</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Sumar campos</p></td>
+            <td><p>select sum(NomCampo) from NomTabla;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Sumar campos distintos</p></td>
+            <td><p>select sum(distinct NomCampo) from NomTabla;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Sumar Registros por campos</p></td>
+            <td><p>select NomCampo, sum(NomCampo) from NomTabla group by NomCampo;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Calcular el promedio por campos</p></td>
+            <td><p>select NomCampo, avg(NomCampo) from NomTabla group by NomCampo;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Modificar Registros</p></td>
+            <td><p>update NomTabla set NomCampo=VlrNuevo, NomCampo2=VlrNuevo;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Modificar Registro Especifico</p></td>
+            <td><p>update NomTabla set NomCampo=VlrNuevo where NomCampo='Filtro' and NomCampo2='Filtro';</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Eliminar Registro Especifico</p></td>
+            <td><p>delete from cursos where NomCampo='Filtro';</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Agregar campo</p></td>
+            <td><p>alter table NomTabla add NomCampoNuevo TipoDato;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Cambiar nombre</p></td>
+            <td><p>alter table NomCampo rename to NomCampoNuevo</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Crear tabla sino existe</p></td>
+            <td><p>create table if not exists NomTabla(campo1 TipoDato, campo2 TipoDato);</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Establecer llave primaria</p></td>
+            <td><p>Normalmente va al final de la creacion de tablas (por eso las tres parentesis)<br>...primary key());</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Establecer llave foranea</p></td>
+            <td><p>Normalmente va al final de la creacion de tablas (por eso las tres parentesis)<br>...foreign key(CampoDependiente) references NomTabla(NomCampo));<br><strong style="color: rgb(0, 102, 255);">alter table Asignaturas add constraint NomForeign foreign key (MateriaAsignatura) references Materias(idMateria);</strong></p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Insertar informacion en llave Foranea</p></td>
+            <td><p>insert into NomTable values (0 (SOLO si es auto_increment), Registro2,Registro3,Nom/NumKeyForeign,NumKeyForeign2);</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Asociacion de campos</p></td>
+            <td><p>create table NomTabla (NomCampo TipoDato not null auto_increment, NomCampo2 TipoDato not null, primary key (NomCampo), foreign key(CampoDependiente) references NomTabla(NomCampo));</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Reinciar autoincremento</p></td>
+            <td><p>alter table NomTabla auto_increment = 1; Puede ser un valor diferente</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Valor unico (no se repite en la tabla)</p></td>
+            <td><p>create table NomTabla (NomCampo TipoDato not null auto_increment, NomCampo2 TipoDato not null unique, primary key (NomCampo), foreign key(CampoDependiente) references NomTabla(NomCampo));</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Insertar registro en campo especifico</p></td>
+            <td><p>insert into NomTabla (NomCampo) values ('NomRegistroNuevo');</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Juntar tablas</p></td>
+            <td><p>select NomTabla.NomCampo, NomTabla2.NomCampo2 from NomTabla, NomTabla2;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Juntar tablas con condicion</p></td>
+            <td><p style="text-align: left;">...cuando la clave foranea apunte a la clave primaria del campo (que sea el mismo)...<br>select NomTabla.NomCampo, NomTabla2.NomCampo2 from NomTabla, NomTabla2 where NomTabla.NomCampo=NomTabla2.NomCampo2;<br>select Materias.Materia, Asignaturas.Asignatura from Materias, Asignaturas where Asignaturas.MateriaAsignatura=Materias.idMateria;
+            </p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Renombrar Registro</p></td>
+            <td><p>alter table NomTabla change NomCampo NomCampoNuevo TipoDato not null;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Renombrar Tabla</p></td>
+            <td><p>RENAME TABLE NomCampo TO NomCampoNuevo;</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Fecha actual</p></td>
+            <td><p>curdate()</p></td>
+            <td><p>('now')</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Retornar el ultimo ID generado</p></td>
+            <td><p>select last_insert_id();<br>insert into NomCampo values ('NomRegistro','NomRegistro2') values <u>last_insert_id()</u>,NumAlQueQuieroQuePertenezca); ó  select new.NomCampo into NomCampo2</p></td>
+            <td><p>👈 last_insert_rowid(),</p></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p>Llenar registro con ceros</p></td>
+            <td><p>...TipoDato <u>zerofill</u></p></td>
+            <td><p>No aplica</p></td>
+        </tr>
+        
+        <tr class="unCol">
+            <td class="fn"><p>Aumentar la capacidad (sin Signo)</p></td>
+            <td><p>...TipoDato unsigned</p></td>
+        </tr>
+        
+        <tr class="unCol">
+            <td class="fn"><p>Delimitar valores de campo</p></td>
+            <td><p>create table NomTabla (valor <u>enum</u>('Posibilidad1','Posibilidad2','Posibilidad3'));</p></td>
+        </tr>
+        
+        <tr class="unCol">
+            <td class="fn"><p>Asignacion de Alias</p></td>
+            <td><p>select NomTabla.NomCampo as NueAlias, NomTabla2.NomCampo2 as NueAlias2, TablaNuevoAlias as NomCampo3 from NomTabla, NomTabla2, <u>NomTablaAntigua</u> TablaNuevoAlias Condicion</p></td>
+        </tr>
+        
+        <tr class="unCol">
+            <td class="fn"><p>Unir tablas</p><br>Forma corta: select NAlias.NomCampo, NAlias.NomCampo2 from NomTabla (Desde donde inicio) from NomTabla NAlias <u>inner join</u> NomTabla2 NAlias2 on NAlias2.NomCampoUnir, NAlias2.NomCampo2Unir (condicion);</td>
+            <td><p>select NomTabla.NomCampo, NomTabla2.NomCampo2 from NomTabla (Desde donde inicio) <u>inner join</u> NomTabla on NomTabla.NomcampoUnir, NomTabla2.Nomcampo2Unir (condicion);</p></td>
+        </tr>
+        
+        <tr style="display: grid; grid-template-columns: 22% 26% 52%;">
+            <td class="fn"><p>Union por la izquierda</p></td>
+            <td><p>Obtiene todo lo de Tabla A y el vinculo que tiene con tabla B</p></td>
+            <td><p>select NomTabla.Nomcampo, NomTabla2.Nomcampo2 from NomTabla (Desde donde inicio) <u>left join</u> NomTabla on NomTabla.NomcampoUnir, NomTabla2.Nomcampo2Unir (condicion);</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Union por la Derecha</p></td>
+            <td><p>Obtiene todo lo de Tabla B y el vinculo que tiene con tabla A</p></td>
+            <td><p>select NomTabla.Nomcampo, NomTabla2.Nomcampo2 from NomTabla (Desde donde inicio) <u>right join</u> NomTabla on NomTabla.NomcampoUnir, NomTabla2.Nomcampo2Unir (condicion);</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Insertar consultados en tabla con tipo de datos compatibles</p></td>
+            <td><p>insert into NomTablaDestino(NomCampoDestino, NomCampo2Destino) select TablaOrigen.CampoOrigen, Tabla2Origen.Campo2Origen from TablaOrigen, Tabla2Origen Condicion</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Variables Temporales</p></td>
+            <td><p>select @NombreVariableTemporal := operacion;<br>select @NombreVariableTemporal;</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Definicion de variable directa</p></td>
+            <td><p>set @NombreVariableTemporal = 'NomTabla'</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Asignar cantidad por defecto</p></td>
+            <td><p>NomCampoNuevo Tipo <u>default(VlrDefecto)</u> </p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Scripts</p></td>
+            <td><p>Ejecutar script: La base ya debe de estar creada. Instruccion cmd:<br>mysql -u Usuario -p NomBaseDestino  "ruta"</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Backup</p></td>
+            <td><p>mysqldump -u Usuario -p NomBase &gt; "RutaDestino"</p></td>
+            <td><p>.output "RutaDestino"<br>.dump</p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Insertar imagen.<br>Puede ser un campo de texto<br>blob=Campo tiene que ser blob</p></td>
+            <td><p>update NomTabla set NomCampo=('Ruta') condicion;<br>update NomTabla set NomCampo=Load_file('Ruta') condicion;</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>views (vistas automaticas) para usuario</p></td>
+            <td><p>create view NomVista_vw as CONSULTA (Normalmente select);<br>select * from NomVista_vw;</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Indices vusquedas rapidas</p></td>
+            <td><p>...index idx_NomIndice(Campo));</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Disparador (evento)</p></td>
+            <td><p>delimiter CaRacter create trigger NomTrigger <u>before (antes)/after (despues)</u> Condicion begin Proceso; end CaRacter</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p>Condicional if</p></td>
+            <td><p>if (Condicion) then Operacion; elseif (Condicion) then Operacion; else (Condicion) then Operacion; end if</p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+        </tr>
+        
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+        </tr>
+
+        <tr style="display: grid; grid-template-columns: 100%; background-color: rgb(0, 255, 242);">
+            <td><p></p></td>
+        </tr>
+
+        <tr style="display: grid; grid-template-columns: 100%;">
+            <td><h2>MySQL Workbench (Herramienta grafica de MySQL)</h2></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Crear base de datos<br><u>(Create schema</u> EQ <u>Create Database)</u></p></td>
+            <td><p>Boton <strong>create a new schema</strong></p><img src="../source/SQL/img/NewChema.PNG"></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Usar base de datos<br><u>NameBaseNegrilla</u> EQ <u>use NomBase</u></p></td>
+
+            <td style="display: grid; grid-template-columns: 1fr 1fr;">
+                <ol style="color: rgb(255, 0, 234);">
+                    <li><p style="color: black;">Cambiar a <strong>Schemas</strong></p></li>
+                    <li><p style="color: black;">Doble Click en el nombre de la base</p></li>
+                </ol><img src="../source/SQL/img/UseDatabases.PNG">
+            </td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Eq a terminal</p></td>
+            <td><img src="../source/SQL/img/EquivalentTerminal.PNG"></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Eq a enter<br>Ejecutar desde la linea actual</p></td>
+            <td><img src="../source/SQL/img/EquivalentEnter.PNG"  usemap="#EQTer"></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Eq a show databases</p></td>
+            <td><img src="../source/SQL/img/EquivalentShowDatabase.PNG" usemap="#EQShow"></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Eq Describe NomBase</p></td>
+            <td><img src="../source/SQL/img/EquivalentDescribeBase.PNG" usemap="#DesBs"></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Eq create table</p></td>
+            <td><img src="../source/SQL/img/EquivalentCreateTable.PNG" usemap="#EQCt"></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Claves Foraneas y primarias<br>Verde hacia donde apunta Azul desde donde apunta</p></td>
+            <td><img src="../source/SQL/img/ModelColor.PNG" usemap="#ModelColor"></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Datos temporales con begin/start transaction, Cuando se determine el "commit" los cambios se aplican, sino lo puedo deshacer con rollback</p></td>
+            <td>Pasa el mouse por la imagen<img src="../source/SQL/img/OpTemp.PNG" usemap="#OpTemp">
+            </td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Procedimientos y Funciones</p></td>
+            <td><p>Hay un término subrutina o subprograma que significa una pieza de código parametrizada que se puede llamar desde diferentes lugares. <br>
+            Las funciones y los procedimientos son implementaciones de aquellos. Por lo general, las funciones devuelven valores y los procedimientos no devuelven nada.</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Metodos (Procedimientos)</p></td>
+            <td>delimiter // &lt;- Cambiar<br>create procedure NomProcedimiento(in/out/inout NomParametro (Tipo)) begin Operacion; end; //<br>call NomProcedimiento ('NomParametro ó vacio'); &lt;- Desde el codigo</td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Eliminar Procedimientos</p></td>
+            <td><p>drop procedure NomProcedimiento;</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Formatear(cambiar) tipo de dato</p></td>
+            <td><p>...cast(NomCampo(NomRegistro) as TipoNuevo);</p></td>
+        </tr>   
+
+        <tr class="unCol">
+            <td class="fn"><p>Eliminar Espacios en blanco</p></td>
+            <td><p>...trim(NomCampo/NomRegistro);</p></td>
+        </tr>         
+
+        <tr class="unCol">
+            <td class="fn"><p>Metodos (Funciones)</p></td>
+            <td><p>delimiter // &lt;- Cambiar ;<br>create function NomFuncion (NomParametro (Tipo)) returns Tipo <u>&lt;-Deterministica(Siempre se obtiene el mismo dato)</u>  begin Operacion; return(Variable) end //<br>select NomFuncion ('NomParametro'); &lt;- Desde el codigo</p></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p>Declaracion de variable</p></td>
+            <td>declare NomVariable Tipo;</td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p></p></td>
+            <td></td>
+        </tr>
+
+        <tr class="unCol">
+            <td class="fn"><p></p></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td class="fn"><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+        </tr>
+    </table>
+    <a href="../source/SQL/Archivos/PDF/TipeDate.pdf" target="_blank" rel="noopener noreferrer"><button>Tipos de datos</button></a>
+    <a href="../source/SQL/Archivos/PDF/Proyecto01.pdf" target="_blank" rel="noopener noreferrer"><button>Taller 1</button></a>
+    <p>Para las relaciones deben tener el mismo tipo de dato</p>
+
+    <div class="maps" style="cursor: pointer;">
+        <map name="EQTer">
+            <area  alt="Equivalente a enter" title="Equivalente a enter(Ejecutar)" coords="-1,-1,28,22" shape="rect">
+            <area  alt="Ejecutar en Linea actual" title="Ejecutar desde la linea actual" coords="30,0,51,22" shape="rect">
+        </map>
+        <map name="EQShow">
+            <area alt="Actualizar todo" title="Actualizar todo" coords="70,0,92,17" shape="rect">
+            <area alt="Ver tablas" title="Ver tablas" coords="0,62,98,99" shape="rect">
+        </map>
+        <map name="DesBs">
+            <area alt="Describe la base" title="Describe la base" coords="48,41,253,63" shape="rect">
+        </map>
+        <map name="EQCt">
+            <area alt="Equivalente a Create Table" title="Equivalente a Create Table" coords="1,2,27,41" shape="rect">
+        </map>
+        <map name="TaMyISA">
+            <area alt="Motor Estático " title="Motor Estático " coords="3,1,772,33" shape="rect">
+            <area alt="Motor Dinámico" title="Motor Dinámico" coords="-1,34,773,69" shape="rect">
+            <area alt="Motor Comprimido" title="Motor Comprimido" coords="3,70,773,97" shape="rect">
+        </map>
+        <map name="MotorMerge">
+            <area alt="Ambas tablas son MyISAM" title="Ambas tablas son MyISAM" coords="0,0,296,177" shape="rect">
+            <area alt="Unión de tablas" title="Unión de tablas" coords="-1,177,296,269" shape="rect">
+        </map>
+        <map name="MotoresDis">
+            <area alt="Ver Motores disponibles" title="Ver Motores disponibles" coords="-1,-1,251,35" shape="rect">
+        </map>
+        <img src="MotorActual.PNG" usemap="#MotorActual">
+        <map name="MotorActual">
+            <area alt="Mostrar Motor ACTUAL y otra informacion" title="Mostrar Motor ACTUAL y otra informacion" coords="0,0,575,50" shape="rect">
+        </map>
+        <map name="EjmExpreRegu">
+            <area alt="K ó KA" title="K ó KA" coords="320,68,0,0" shape="rect">
+            <area alt="Seguido del guion bajo" title="Seguido del guion bajo" coords="362,42,36" shape="circle">
+            <area alt="de 0 a 9 entre J.Mayus y J.Minus" title="de 0 a 9 entre J.Mayus y J.Minus" coords="402,0,875,76" shape="rect">
+            <area alt="Mínimo 5 Máximo 9" title="Mínimo 5 Máximo 9" coords="884,1,1083,74" shape="rect">
+        </map>
+        <map name="ModelColor">
+            <area alt="Verde hacia donde Apunta" title="Verde hacia donde Apunta" coords="1,176,333,301" shape="rect">
+            <area alt="Azul desde dónde" title="Azul desde dónde" coords="-1,-1,333,176" shape="rect">
+        </map>
+        <map name="OpTemp">
+            <area alt="Apagar Autoguardado" title="Apagar Autoguardado" coords="168,27,-1,-1" shape="rect">
+            <area alt="Operación Temporal" title="Operación Temporal" coords="1,19,167,83" shape="rect">
+        </map>
+    </div>
+    <h2>Motores de tablas</h2>
+    <p><b>Tablas ISAM:</b> Fue una tabla secuencial que avanza de a bloque 1-1.</p>
+    <p><b>Tablas MyISAM:</b> Se generan dos archivos distintos, establecen la estructura de la tabla. Es la que se usa en el hoy</p>
+    <ul>
+        <li><b>Estaticas:</b> Tienen un tamaño definido y solo pueden almacenar un tipo de dato, todos los registros ocupan el mismo(maximo) espacio independientemente si es mayor o menos que el registro.</li>
+        <li><b>Dinamicas</b> Intentan optimizar el tamaño, son mas lentas que las Estaticas debido a que asigna el tamaño a cada registro.</li>
+        <li><b>Comprimidas:</b> Se compacta la informacion, no son muy usadas en el uso comun, se hace uso en servidores</li>
+    </ul>
+    <p><b>Motor InnoDB</b> Es el usado actualmente, lo asigna en automatico</p>
+    <p><b>Memory</b> Era el motor HEAP, hace uso de la memoria RAM para guardar los datos, no se guarda en el disco duro, es optimo pero es volatil(Cuando se cierra/apaga toda la informacion de la memoria RAM se borra).</p>
+    <p><b>Merge:</b> Agrupa tablas de tipo MyISAM siempre y cuando tengan los mismos tipos de datos, se usa para respaldos</p>
+    <h2>Expresiones regulares</h2>
+    <p>Son sstrings que establecen las condiciones para evaluar un caracter</p>
+    <ul>
+        <li>Rango del 0-9: [0-9]</li>
+        <li>Rango del 0-9: [0-9]+ que aparezca un o mas veces</li>
+        <li>Cuantificador: numero exacto de cuantas veces quiero que aparezca {1 <u>Digito/s</u>}->{liteInferior, limiteSuperior}</li>
+        <li>Cuantificador * significa que se repita 0 mas veces</li>
+        <ul>
+            Ejemplo:
+            <img src="../source/SQL/img/EjmExpreRegu.PNG" usemap="#EjmExpreRegu">
+        </ul>
+    </ul>
+    <p></p>
+    
+</body>
+👈 Igual
+</html>
