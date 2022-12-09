@@ -154,9 +154,10 @@
             <td><p>Eliminacion manual</p></td>
         </tr>
 
-        <tr class="unCol">
+        <tr>
             <td class="fn"><p>Consultar datos en tabla</p></td>
             <td><p>select * from NomTabla;</p></td>
+            <td><p>select * from "esquema"."NomTabla"</p></td>
         </tr>
 
         <tr class="unCol">
@@ -174,32 +175,34 @@
             <td><p>load data infile 'SepararRutaConDosBarras' into table NomTabla;
                 <br><a href="https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client" target="_blank" rel="noopener noreferrer">Solo si error:</a> SET GLOBAL local_infile=1; | quit | mysql --local-infile=1 -u user -p | load data local infile '/path/InscripcionesMySQL.txt' into table Inscripciones;</p></td>
             <!-- load data infile '/home/ciro/Música/mySql/InscripcionesMySQL' Inscripciones; -->
-            <td><p>.mode csv | .import 'RutaArch'</p></td>
+            <td><p>pg_restore --host localhost --port 5432 --username "my_user_name" --dbname "my_db_name" --role "my_user_name" --no-password  --verbose "/Users/me/Desktop/backup_file.tar"            </p></td>
         </tr>
 
         <tr class="unCol">
             <td class="fn"><p>Filtrar Datos <u>con</u> Repeticion</p></td>
-            <td><p>select NomColumna, NomColumna2 from NomTabla order by NomCampo, NomCampo2</p></td>
+            <td><p>select NomCampo, NomCampo2 from NomTabla order by NomCampo, NomCampo2</p></td>
         </tr>
 
-        <tr class="unCol">
+        <tr>
             <td class="fn"><p>Filtrar Datos <u>sin</u> Repeticion </p></td>
-            <td><p>select <u>distinct</u> NomColumna... 👆</p></td>
+            <td><p>select <u>distinct</u> NomCampo... 👆</p></td>
+            <td><p>select <u>distinct</u> "NomCampo" from "NomTabla"</p></td>
         </tr>
 
         <tr class="unCol">
             <td class="fn"><p>Filtrar Ascendente</p></td>
-            <td><p>select NomColumna, NomColumna2 (ó *) from NomTabla order by NomCampo/NumCampo asc;</p></td>
+            <td><p>select NomCampo, NomCampo2 (ó *) from NomTabla order by NomCampo/NumCampo asc;</p></td>
         </tr>
 
         <tr class="unCol">
             <td class="fn"><p>Filtrar Descendente</p></td>
-            <td><p>select NomColumna, NomColumna2 from NomTabla order by NomCampo/NumCampo desc;</p></td>
+            <td><p>select NomCampo, NomCampo2 from NomTabla order by NomCampo/NumCampo desc;</p></td>
         </tr>
 
         <tr class="unCol">
             <td class="fn"><p>Contar coincidencias</p></td>
             <td><p>select count(*) from NomTabla;</p></td>
+            <td><p>select count(*) from "esquema"."NomTabla";</p></td>
         </tr>
 
         <tr class="unCol">
@@ -480,9 +483,10 @@
             <td><h2>MySQL Workbench (Herramienta grafica de MySQL)</h2></td>
         </tr>
 
-        <tr class="unCol">
+        <tr>
             <td class="fn"><p>Crear base de datos<br><u>(Create schema</u> EQ <u>Create Database)</u></p></td>
             <td><p>Boton <strong>create a new schema</strong></p><img src="../source/SQL/img/NewChema.PNG"></td>
+            <td><p>CREATE DATABASE NomBase</p></td>
         </tr>
 
         <tr class="unCol">

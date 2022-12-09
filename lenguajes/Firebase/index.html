@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="shortcut icon" href="https://www.pngitem.com/pimgs/b/424-4242146_gopher-png.png" type="image/x-icon">
+    <title>Go</title>
+</head>
+<body>
+    <h1>Go</h1>
+<div class="Basic">
+    <h2>Estructura base</h2>
+    <h3>Comentarios</h3>
+    <p>Se insertan con &nbsp;<span class="ipr">//</span>&nbsp;y bloques &nbsp;<span class="ipr">/*t*/</span></p>
+
+    <h3>Concatenar</h3>
+    <p>Se concatena con coma &nbsp;<span class="ipr">,</span></p>
+
+    <h3>Declaracion de variables:</h3><p>Para ello hacemos uso de palabra reservadas&nbsp;<span class="ipr">var</span> &nbsp;NomVariable TipoVariable</p>
+    <ul class="sub">
+        <li>NomVariable int</li>
+        <li>NomVariable float64</li>
+        <li>NomVariable string</li>
+        <li>NomVariable bool</li>
+        <li>&nbsp;<span class="ipr">const</span> NomVariable = valor</li>
+        <p>Asignamos valores y declaramos variables con := si son <b>decimales </b> es necesario declarar como <b>float</b></p>
+    </ul>
+    <p>No usamos&nbsp;<b>punto y coma</b></p>
+    <p class="sub">Se debe crear tres carpetas, bin, pkg, src</p>
+
+    <h3>Salto de linea y espacio tabular</h3>
+    <p>Usamos \n para salto de linea, \t para espaico tabular</p>
+
+    <h3>Formateo de datos</h3>
+    <p>Dentro del print se concatena el <strong>%s (Insertar string)</strong>, %d (Insertar int) seguido de las variables con el mismo formato insertado. <b>...print(&quot;Hola, %s y su edad es: %d \n&quot;, nombre <u>(String)</u>, edad <u>(Int)</u>)</b> para insertar valor sin referencia usamos <b>%v</b> ver manual para más referencias</p>
+
+    <h3>Guardar en una variable el valorformateado</h3>
+    <p>NomVariable = fmt.<u>Sprintf</u>(&quot;Ejemplo anterior&quot;)</p>
+
+    <a href="https://martinciro.github.io/Lenguajes/lenguajes/source/HTML/Archivos/PDF/caracteres.pdf" target="_blank" rel="noopener noreferrer">
+        <button>Descargar pdf</button>
+    </a>
+
+    <h3>Tipo de datos</h3>
+    <ul>
+        <li><b>uin8&ndash;uit64:</b> Numeros positivos</li>
+        <li>Float</li>
+        <li>String</li>
+        <li>Boleano</li>
+        <a href="../source/Go/Archivos/PDF/Programacion-Go-lang.pdf" target="blank" rel="noopener noreferrer">
+            <button>Mas tipos de datos (Pg.20)</button>
+        </a>
+    </ul>
+
+    <h3>Obtener el tipo de dato</h3>
+    <p>...println(&quot;<u>%T</u>&quot;,NomVariable)</p>
+
+    <h3>Pedir datos por teclado</h3>
+    <p>...fmt.print(&quot;Ingrese&quot;) ...fmt.<u>scanln</u>(<b><u>&amp;</u></b>NomVariable)</p>
+    
+    <h3>Mostrar mensaje por pantalla</h3>
+    <p>Debemos importar la libreria &nbsp;<span class="ipr">fmt</span>&nbsp;y precedido un &nbsp;<span class="ipr">print</span>/&nbsp;<span class="ipr">println</span>/&nbsp;<span class="ipr">printf</span></p>
+    <p class="sub">import "fmt"<br>fun main(){<br>fmt.println(&quot;TextoQuiero&quot;)<br>}</p>
+
+    <div class="fmt">
+        <p>El paquete&nbsp;<strong>fmt</strong>&nbsp;es usado para mas que el print</p>
+    </div>
+
+    <h3>Operadores aritmeticos</h3>
+    <p>Deben ser enteros, se hace uso de los signos de operacion &nbsp;<span class="ipr">+ &ndash; * /</span></p>
+
+    <h3>Funciones</h3>
+    <p>Se declara con &nbsp;<span class="ipr">func</span>&nbsp;NomFuncion(Parametros) TipoVariableRetornar{ Operacion (Normalmente se usa la palabra <u>return</u> para evitar agregar exceso de variables en el codigo)}</p>
+    <ul>
+        <li><b>Cantidad indefinida:</b> func</span>&nbsp;NomFuncion(ParametrosEntrada ...&larr;'Quiere decir que no se sabe la cantidad exacta de los valores ingresados' TiposDatos) { Operacion (Normalmente se usa la palabra <u>return</u> para evitar agregar exceso de variables en el codigo)}</li>
+        <li><b>Retornar multiples valores:</b> Despues de la declaracion de los parametros se declara que valores va a retornar<br>...(parametros)(Tipo1Out, Tipo2Oudt){Operacion}</li>
+        <li><b>Recursivas: </b>Retorna a si mismo el valor de la propia funcion. <b>Ejm:</b><br>func factorial (n int) int{ if n == 0{return 1} f := n*<u>factorial(n&ndash;1)</u>factorial de <b>3</b> (3*2*1=6)}</li>
+        <li><b>Funcion Anonima:</b>func(){Proceso}()&larr;Dentro del main o desde otra funcion. Tambien se puede asignar a una variable NomVariable:=func(){} &larr; No es necesario los parentesis, a la hora de llamarla sí NomVariable()</li>
+        <li><b>Clousure: </b>Funcion que retorna otra funcion. func NomFuncion (NomVariable TipoDato) func (ValorRetornar TipoRetornar) Tipo{Operacion}. <b>Ejm:</b><br>func repe(n int) func(cadena string) string{return func(cadena string) string{return strings.repeat(cadena, n)}} &larr; Una funcion &quot;anidada&quot;</li>
+        <li><b>Punteros:</b> Hace uso de referencias por memoria, parecido a los constructores, se encarga de unir por medio de puntos fisicos (valores en memoria), su declaracion es: func NomFuncion(NomVariable *TipoDato){Operacion} &larr; Al llamarla en el main se hace uso del &amp;. <b>Ejm:</b><br>func modificador(cadena *string){fmt.printf(&quot;%p\n&quot;, cadena) *cadena = &quot;Hola desde la funcion&quot;}...En el main:<br> func main(){cadena:=&quot;Hola mundo de go&quot; fmt.printf(&quot;%p\n&quot;, cadena) fmt.prinln(&quot;Antes de la funcion: &quot;,cadena) modificador(&amp;cadena) fmt.prinln(&quot;Despues de la funcion:),cadena}</li>
+        <li><b>Errores:</b> existe un paquete para ello</li>
+        <li><b>Variables globales:</b> Se difenen afuera de todas las fuciones, en la mayoria de ocasiones debajo de <u>import Packete</u> o </li>
+        <li><b>Ejecutar despues del main</b> Se ejecuta al final, la palabra clave es defer. <b>Ejm:</b> ...main(){defer NomFuncion}</li>
+        <li><b>Leer archivo:</b> Hacemos uso del paquete OS.open(RutaPackete) se crea un slice para el almacenamiento tipo byte del archivo, luego se cargan los bytes del slice con el parametro read y el nombre del slice, despues lo convertimos a string. <b>Ejm:</b><br>contenido:=Make([]byte, 254)___long:=file.read(contenido)___ contenidoArchivo:=string(contenido:long)___ cerramos el archivo con file.close
+        <strong>file es una Variable Declarada Con EseNombre, no es palabra reservada</strong>
+        </li>
+        <li><b>Defer: </b>Ejecutar al final de los otros procesos</li>
+        <li><b>Funcion panic: </b> Solo para errores, cuando hay error detiene el proceso</li>
+        <li><b>Recover: </b>Controla todos los <u>panic</u>, No muestra el mensaje panic pero si un pequeño mensaje</li>
+    </ul>
+
+    <div class="info">
+        <a href="https://gobyexample.com/" target="blank" rel="noopener noreferrer">
+            <button><u>Pagina Go</u></button>
+        </a>
+        <a href="https://go.dev/tour/welcome/1" target="blank" rel="noopener noreferrer">
+            <button>Guía <u>Basica</u></button>
+        </a>
+        <a href="../source/Go/Archivos/PDF/Curso-de-Go.pdf" target="blank" rel="noopener noreferrer">
+            <button>Curso de GO en PDF</button>
+        </a>
+    </div>
+    <h3>Array o vectores</h3>
+    <p>var NomArreglo [TamañoArregle]TipoDatos{ElementosSeparadospor<u>coma</u>}</p>
+    <ul>
+        <li>Arreglo Dinamico: ...NomArreglo[...]... Los tres puntos significa que es dinamico
+            <li>Asignar Dato en posicion: <u>Posicion:Valor</u> <b>Ejm:</b> 0:&quot;Alex&quot;,</li>
+        </li>
+        <li>Longitud: len(NomVector)</li>
+        <li>Delimitar el tamaño de un vector asignado: NomNuevoVector:=NomArraty[PosicionesDesde:PosicionHasta] <b>Ejm:</b> subMonenda:=monedas[0:3]</li>
+    </ul>
+    <h3>Slicen</h3>
+    <p>Parecido a los vectores</p>
+    <ul>
+        <li>NomSlicen := []TipoDato{ValoresInt} &larr; Inicia en posicion 1</li>
+        <li>Funcion Append: Permite agregar mas datos al Slicen. Ejm: numeros=append(numeros &larr; Slicen ya declarado, 4 &larr; Valor nuevo)</li>
+    </ul>
+    <h3>Funcion Make</h3>
+    <p>NomFuncion := make([]TipoDato, Longitud &larr;  Si ponemos cero queda un array automatico, Capacidad &larr; Maximo permitdo)</p>
+
+    <h3>Mapas</h3>
+    <p>Parecido a los diccionarios en diferentes lenguajes de programacion. Su estructura es NomMapa:=make(<u>map</u>[TipoDatoClave] TipoDatoValorClave) &larr; Se debe asignar los valores de forma manual para llenar el map. NomMapa[1]=&quot;String&quot;. <Strong>Ejm</Strong> dias:=make(map[int]string)... <strong>Carga de datos:</strong> dias[1]:=&quot;Domingo&quot;</p>
+    <li><h3>Eliminar Valor de Map</h3> delete(NomMapa, Clave)</li>
+    <li>Con <u>len(NomMapa)</u> se determina el tamaño del mapa</li>
+    <li><h3>Convinando con vectores:</h3>Podemos crear indices muy extensos, tambien normalemente se crean interfaces. La estructura del almcenamiento de un vector en un map es: NomMapa:=make(map[TipoDatoClave]<u>[]</u>TipoDatoValorClave)...<strong>Ejm</strong> estudiantes:=make(map[string][]int)... <strong>Carga de datos:</strong> estudiantes[&quot;Alex&quot;]=[]int{13,14,15,16}</li>
+
+    <h3>Condicionales</h3>
+    <ul>
+        <li><b>Boleano:</b> variable=variable1<strong>Comparacion</strong>variable2</li>
+        <li><b>Operadores logicos:</b> Not, And, Or<br><b>Not</b> = Devuelve el valor contrario de un booleano (...Println(<b>!</b>Booleano))<br><b>And</b>= Ambas setencias deben ser verdaderas (...Println(Booleano1 <b>&amp;&amp;</b> Booleano))<br><b>Or</b> = Ejecuta uno de los dos que sea verdadero (...Println(Booleano1 <b>||</b> Booleano))</li>
+        <li><b>If</b> La estructura es parecida a la de <u>Javascript</u>: if Condicion { ProcesoSiVerdad} elseif Condicion{} else {Proceso si contrario}<li><b>Declaracion de variables dentro el condicional</b> if NomVariable1, NomVariable2 := Valor1, Valor2; NomVariable1 Comparacion{Operacion}</li></li>
+        <li><b>Switch</b> Switch{ case Condicion: Operacion. default: Operacion.}<br>
+            <ul><li>Switch NomVariable{ case 1, 2, 3:Operacion. default: Operacion.}</li></ul>
+    </li>
+    </ul>
+    <h3>Operadores de asignacion</h3>
+    <ul>
+        <li><b>Operaciones basicas en asignacion:</b> variable1 <u><b>+=</b></u> valorSumar &larr; Toma el valor de variable1 y le suma valorSumar, aplica la misma extructura para las demas operaciones (Resta: <u><b>&ndash;=</b></u>) &larr; Igual con los demás</li>
+    </ul>
+
+    <h3>Operadores de incremento y decremento</h3>
+    <p>Para ello usamos Vriable<u>++</u> (no es necesario guardarlo en una variable) &larr; Misma estructura para el decremento (&ndash;&ndash;)</p>
+    
+    <h3>Bucles</h3>
+    <p>No existe <strong>while</strong></p>
+    <ul>
+        <li><b>For:</b>for VariableControl; condicion; VariableControl{Operacion.}</li>
+        <li><b>Break y continue</b> <u>Break</u> &quot;rompe&quot; la operacion en determinado punto. <u>Continue</u> &quot;Salta/Continua&quot; con la siguiente iteracion</li>
+        <li><b>For Each</b> Normalemente se usa en <u>mapas</u> o en <u>Vectores</u> for Indice, Elementos := range NomVector{fmt.println(Indice, Elementos)}</li>
+    </ul>
+
+    <h3>Evitar error variable no definida</h3>
+    <p>Se hace uso de <b>_</b>NomVariable</p>
+
+    <div class="str">
+    <h3>Packete string (Convertir a mayus/minus)</h3>
+    <p>Normalmente se usa dentro de una funcion</p>
+    <ul>
+        <li><b>ToUpper (Mayusculas):</b> func NomFuncion (Parametros TipoDato){Parametro=<u>string</u>.ToUpper(Parametro)}</li>
+        <li><b>ToLower (Minusculas):</b> func NomFuncion (Parametros TipoDato){Parametro=<u>string</u>.ToLower(Parametro)}</li>
+        <li><b>Remplazar Caracter:</b> func NomFuncion (Parametros TipoDato){Parametro=<u>string</u>.Replace(Parametro,&quot;LetraRemplazar&quot;, &quot;Remplazo&quot;, NumeroDeReemplazos)}<ul><li><b>Remplazar todo (espacios):</b> Hacemos uso de la palabra clave replaceAll(parametro, &quot;Remplazar&quot;, &quot;Remplazo&quot;)</li></ul></li>
+    </ul>
+        <h3>Invertir String</h3>
+        <ol>
+            <li>Convetir a un arreglo &quot;strings.Split(NomVariableString, &quot;&quot; &larr; hará que cada caracter quede guardado en una posicion del vector)&quot;</li>
+            <li>Convertirlo a slice: NomNuevoVector := make([]string,0)<br>for i=:len(NomArregloArriba👆)&ndash;1, i>=0, i&ndash;&ndash; { NomVectorDeArriba = <u>append</u>(NomArray2, NomArrai1[1]) }</li>
+            <li>Convertirlo en string: return.String.<u>join</u>(NomArray2, &quot;&quot;)</li>
+        </ol>
+        <h3>Formatear mapas/vectores (Strconv)</h3>
+        <p>Su esctuctura es &quot;NomVariable := strconv.Atoi &larr;ConvertirAEntero(NomVariableConvertir)&quot;</p>
+    </div>
+    <h3>Manejo de errores</h3>
+    <p>se crea un condicion comparando el valor nil</p>
+</div>
+<div class="Basic2">
+    <h3>POO</h3>
+    <ol>
+        <li>struct (Molde): Iguales a clases. type NomStruct struct{Variable TipoDato}</li>
+        <li>Propiedades (Atributos)</li>
+        <li>Métodos (Objetos): func (ReferenciaNomStruct) NomMetodo(){}</li>
+        <li>Objetos (Objetos): Tiene propiedades(Nombre, color) y comportamientos(Girar a la derecha, qué hace). NomVariable := NomStruct{Atributos} ó en lineas <u>separadas</u> por comas<br>Hay dos formas de crear los objetos<br>var NomNuevaVari NomClase<br>NomNuevaVari.NomAtribuClase=AsignacionNum<br>La segunda forma es: NomNuevaVari := &NomClase{NomAtribuClase: AsignacionNum}</li>
+        <li>Constructor: En go los constructores no existen, sin embargo se pueden crear(parecidos) por medio de funciones. Un constructor construye algo, es el que se encarga inicializar los atributos de la clase en cada objeto, el nuevo objeto ejecutara el fragmento de codigo independientemente de los valores cargados en el nuevo objeto.<b>Ejm:</b><br>class Coche(){<br>&emsp;&emsp;int numeroDeRuedas;<br><br>&emsp;&emsp;Coche(){<br>&emsp;&emsp;&emsp;&emsp;numeroDeRuedas=4;<br>&emsp;&emsp;}<br>}<br><br>new Coche()</li>
+    </ol>
+    <h3>Pilares de poo</h3>
+    <ol>
+        <li>Encapsulamiento</li>
+        <li>Abstracción: Extraemos en un modelo un solo atributo del objeto</li>
+        <li>Herencia: Cosas que se repiten se heredan. Se crea una nueva clase con los atributos de la clase padre</li>
+        <li>Polimorfismo</li>
+    </ol>
+    <h3>Creando una lista de tareas</h3>
+    <p>Cada tarea va a ser una estructura, contruimos a partir de la misma las tareas o los objetos y luego las guardamos en listas</p>
+    <ul>
+        <li><b>Usamos la palabra reservada type</b> seguida de struct, declaramos variables</li>
+        <li><b>Creamos los el mlde y los metodos</b></li>
+        <li><b>Aplicamos toPrint</b> para indicar que el valor de la "Funcion" es imprimible</li>
+        <li><b>Hacemos llamado a la tarea creada:</b>Ejm:<br><u>type</u> Task struct{<br>name string<br>desc string<br>completed bool<br>}<br>func (t *Task) toPrint(){<br>fmt.Printf("Nombre: %s\nDescripcion: %s\nCompletado: %t\n",t.name, t.desc, t.completed)<br>}<br>func (t *Task) markCompleted(){ //Cambiar el estado por defecto de completed<br>t.completed = true)<br>} //Modelo construido y sus metodos<br>func main(){<br>t1.Task{<br>name:"Curso de Go",<br>desc:"Completar este mes",<br>completed:flse,<br>}<br>}<br><b>Imprimo la tarea con: </b>t1.toPrint()</li>
+        <li><b>Listar tarea:</b> Creamos otra tarea almacenando un slice<br>type TaskList struct<br>{ tasks [] *Task<br>}<br></li>
+        <li><b>Recibir un objeto de tipo tarea:</b> Usamos la sintaxis appendTask.<br> func (tl *TaskList) <u>appendTask</u>(t *Task){<br>tl.tasks = append(tl.tasks, t}<br></li>
+        <li><b>Eliminar un objeto</b> Misma estructura, reemplazar appendTask por removeTask</li>
+    </ul>
+    <h3>Relacion de uno a uno</h3>
+    <p>Así como en sql se crean relacion, para este ejemplo crearemos dos estructuras y las relaciones de uno a uno</p>
+    <ul>
+        <li>type User struct{nombre string___ email string___ activo bool___}</li>
+        <li>type Student struct{user <u>User</u>___ codigo string___ }</li>
+        <li>funcion main (){alex:= User{___ nombre:"Alex",___ email:"alex@gmail.com",___ activo:true}}</li>
+    </ul>
+    <h3>Relacion de uno a muchos</h3>
+    <ul>
+        <li>type Curso struct{titulo string___ video []video___}&larr;El curso tiene varios videos</li>
+        <li>type Video struct{titulo string___ curso Curso}&larr;Un video pertenece a un solo curso</li>
+        <li>func main(){___ video1:= Video{titulo: "01-introduccion"___ video2:= Video{titulo: "02-instalacion"}___ curso:= Curso{titulo: "curso de go",___ videos: []Video{video1, video2},&larr;vamos a tener muchos video}___ video1.curso=curso___ video2.curso=curso___ fmt.prinln(video1.curso.titulo)}</li>
+    </ul>
+    <h3>Interfaces</h3>
+    <p>Maneja los metodos-estructuras y mostrar de forma diferente cada una</p>
+    <ul>
+        <li>type Perro struct{}<br>type Pez struct{}<br>type Pajaro struct{}</li>
+        <li>func (*Perro) mover() string{___ return "Soy un perro y camino"___ }<br>func (*Pez) mover() string{___ return "Soy un pez y nado"___ }<br>func (*Pajaro) mover() string{___ return "Soy un pajaro y vuelo"___ }</li>
+        <li>type animal <u>interface</u>{___ mover() string___ }&larr;Creamos un interface(funcion) en las primeras lineas de codigo para controlar la impresion y los objetos</li>
+        <li>func moverAnimal( <b>animal</b> Animal){___ fmt.println(animal.mover())} &larr;Recibimos el interfaces</li>
+        <li>func main (){___ perror:=Perro{}___ moverAnimal{&perror}___ pez:=Pez{}___ moverAnimal{&Pez}___ pajaro:=Pajaro{}___ moverAnimal{&pajaro}___ }&larr;Crear estructura de animales</li>
+    </ul>
+    <h3>Clases privadas o publicas</h3>
+    <p>Las clases privadas empiezan por Minusculas, las publicas son lo contrario. Para hacer <b>llamado</b> a las variables y asignacion de atributos <b>NomClase</b>.Atributo = VlrNuevo</p>
+    <h3>1. Encapsulamiento</h3>
+    <p>Se hacen publicos con la primera inicial</p>
+
+    <h3>Getter y setter</h3>
+    <p>Se crea un metodo el cual nos obtiene atributos privados de una clase. get  obtiene, set cambia/envia<br>Ejm:</p>
+    <ol>
+        <li>Se declara el atributo <b>get/set</b> dentro del metodo</li>
+        <li>func (p *Personas) <b>GetNombre</b>() string {<br>&emsp;&ensp;return p.nombre<br>}</li>
+        <li>func (p *Personas) <b><u>Set</u>Nombre</b>(nombre string) {<br>&emsp;&ensp;p.nombre=nombre<br>}</li>
+        <li>El <b>puntero</b> indica que se heredaran las propiedades de Personas y al crear sus metodos se asignan como privados pero sus valores podran ser consultados de forma publica desde cualquier lugar del codigo</li>
+        <li>Dentro del main o para <b>hacer el llamado/ver atributo</b> fmt.Println(p1.GetNombre())<br>Asignacion de valor: p1.SetNombre("Roel")</li>
+    </ol>
+
+    <h3>Uso de paquetes de terceros</h3>
+    <p>Primero lo importamos "go get github.com/donvito/hellomod@v1.0.0" <a href="https://github.com/donvito/hellomod/tree/master" target="_blank" rel="noopener noreferrer">(Ver Ejemplo)</a><br> En el main hacemos llamado con "import Url"</p>
+
+    <h3>Concurrencia</h3>
+    <p>Se ejecuta secuencialmente, se demora más <b>(Sin Concurrencia)</b>, con la concurrencia se hace todo <u>al mismo tiempo</u>, para ello usamos el parametro "go" en la instruccion qu eesta recorriendo el arreglo/struct<br>Ejm:<br>for _, servidor := range servidores {<br>&emsp;&ensp;<u>go</u> revisarServidor(servidor)<br>}</p>
+    <h3>Cancales en concurrencia</h3>
+    <p>Usamos chanels para hacer se comuniquen los hilos y nos den resultados de la consulta echa, se hace uso del atributo <b>make(chan TipoDatoPasar)</b> Ejm: canal := make(chan string) &larr; Recibe String porque la funcion del url (servidor) esta en ese tipo de dato</p>
+
+    <h3>Cover</h3>
+    <p>Nos permite administrar el porcentaje de testeo que se le ha echo el codigo, normalmente para llevar un control en las funciones y sus parametros. <b>Comando: </b><u>go test cover</u><br>Para crear un archivo que anexe el codigo faltante por restar se usa <u>go test -coverprofile=NombreQuiero.out</u> y para traducirlo usamos <u>go tool cover -func=NombreQuiero.out</u> &larr; Funciones testeadas ó <u>go tool cover -html=NombreQuiero.out</u> &larr; verde testeo, rojo sin testear</p>
+
+    <h3>Tiempo de ejecucion</h3>
+    <p>Podemos medir el tiempo de ejecucion y en donde la demora tiene un alto porcentaje de proceso, para ello usamos el parametro. <b>Comando: </b>go test <u>-cpuprofile</u>=cou.out y despues de que se genere el archivo procedemos a ejecutar <u>go tool <b>pprof</b> cou.out</u> No cargará una shell en donde ponemos <b>top</b> o <b>list Fibonacci</b> importamos con el comando <u>web</u> en <i>formato svg</i> ó <u>pdf</u> en <i>formato PDF</i></p>
+</div>
+<div class="web">
+    <h2>Desarrollo web</h2>
+    <p>Debemos hacer uso de servidores, crearemos una sesion local con el paquete http, cambiaremos el error de pagina fallida (443) por un hola mundo, <b>log.Fatal(http.ListenAndServe("localhost:8000", nil))</b> pero antes debemos añadir los Handler <b>http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){fmt.Fprintln(rw,"")})</b> &larr; Funcion vacia que envia los handler</p>
+    <ul>
+        <li>Get: Obtener informacion</li>
+        <li>Post: Guardar informacion</li>
+        <li>Put: Editar</li>
+        <li>Delete: Eliminar</li>
+    </ul>
+    <p>Para ver con que metodo estamos trabajando hacemos uso de .Method <b>Ejm: </b>fmt.Println("El metodo usado es:" + r.)</p>
+    <h3>Envio de errores</h3>
+    <p>http.Error(rw, "Este es un error", <u>http.StatusConflict</u>)</p>
+    <ul>
+        <li>Enviar argumentos por URL: se envia despues del ?. ?name=Alex&Age=26. Para ello debemos agregar la sentencia .URL. fmt.Println(r.URL)</li>
+        <li>Separa el URL de los argumentos: .URL.RawQuery.</li>
+        <li>Converir en una mapa: ...Println(r.URL.<u>Query</u>()) </li>
+        <li>Obtenemos el valor de la mapa haciendo uso de <b>Get</b> Ejm: name:=r.URL.Query().Get("Name")</li>
+    </ul>
+    <h3>Mux</h3>
+    <p>Al poner nil, trabaja en asignacion automatica, un mux es la asignacion de rutas a un handler, parecido al trabajo con http. mux:=http.<u>NewServerMux</u>()___ mux.HandleFunc("/", Index)</p>
+    <h3>Templates</h3>
+    <p>Creamos una funcion para hacer llamado a las paginas, usamos <u>template.parsefiles</u> Ejm:<br>func Index(rw http.ResponseWriter, r *http.Request){<br>&emsp;&ensp;template, err := template.ParseFiles("index.html")<br>&emsp;&ensp;//objeto<br>&emsp;&ensp;Usuario:=Usuarios{"Alex", 26}<br>&emsp;&ensp;if err != nil{<br>&emsp;&ensp;&ensp;panic(err)<br>&emsp;&ensp;} else {<br>&emsp;&ensp;&ensp;template.Execute(rw, nil)<br>&emsp;&ensp;}<br>}</p>
+    <h4>Enviar una estructura al html</h4>
+    <p>Deciamos que en el template.Execute(rw, nil) no enviabamos datos, se reemplaza nil por la funcion de envio de datos. Ejm:<br>type Usuarios struct{<br>&emsp;&ensp;UserName string<br>&emsp;&ensp;Edad int<br>}<br>Creamos el objeto para el envio en el template: usuario:=<u>Usuarios{"Alex",26}</u><br>Ahora si reemplazamos en el else ...(rw,usuario)</p>
+    <p>Hacemos llamado a las variables en el html con doble llaves ({{.UserName VlrPasar}})</p>
+    <h4>Declaracion de variables</h4>
+    <p>Hacemos uso de la estructura: {{with $valor := "MiVariable"}}---Codigo Aquí----{{<b>end</b>}}. Si las variables son declaradas dentro de html se debe hacer llamado con el mismo signo de dolar $</p>
+    <table border="1" class="Logi">
+        <thead>
+        <th style="display: grid; grid-template-columns: 100%;">Operadores logicos</th>
+        </thead>
+        <tbody>
+        <tr>
+            <th>Template</th>
+            <th>Go</th>
+        </tr>
+        <tr>
+            <td>not</td>
+            <td>!</td>
+        </tr>
+        <tr>
+            <td>and</td>
+            <td>&&</td>
+        </tr>
+        <tfoot>
+        <tr>
+            <td>or</td>
+            <td>||</td>
+        </tr>
+        </tfoot>
+        </tbody>
+    </table>
+    <table border="1" class="Condic">
+        <thead>
+        <th>Operadores logicos</th>
+        </thead>
+        <tbody>
+        <tr>
+            <th>Go</th>
+            <th>Template</th>
+        </tr>
+        <tr>
+            <td>eq</td>
+            <td>==</td>
+        </tr>
+        <tr>
+            <td>ne</td>
+            <td>!=</td>
+        </tr>
+        <tr>
+            <td>lt</td>
+            <td><</td>
+        </tr>
+        <tr>
+            <td>le</td>
+            <td><=</td>
+        </tr>
+        <tr>
+            <td>></td>
+            <td>gt</td>
+        </tr>
+        <tfoot>
+        <tr>
+            <td>>=</td>
+            <td>ge</td>
+        </tr>
+        </tfoot>
+        </tbody>
+    </table>
+    <h3>Condicionales</h3>
+    <ul>
+        <li>If-Else se usa la estructura: {{if <u>not</u>.Activo Operacion}} {{else}} Operacion e indicamos en donde finaliza la condicion {{end}} En caso de usar operadores logicos debemos poner primero el operador logico: {{if (or .Activo .Admin)}} Operacion {{end}}</li>
+    </ul>
+    <h3>Ejecutar funciones</h3>
+    <p>Para ejecutar debemos modificar el parametro del servidor <u>"template.ParseFiles("index.html")"</u> y reemplazarlo por template.<u>New("Index.html").Funcs(NomFuncion)</u> pero antes se debe crear una mapa asignandole la funcion que se desea pasar. Ejm:</p>
+    <code>
+        func Saludar() string {<br>
+        &emsp;&emsp;&emsp;returns "Hola desde una funcion"<br>
+        }<br>
+        <p>En la funcion "index" agregamos una mapa de la funcion</p>
+        funciones:=template.FuncMap{<br>
+        &emsp;&emsp;&emsp;"saludar":Saludar,<br>
+        }
+        <br>
+        template, err := template.New("Index.html").Funcs(funciones).ParseFiles("index.html")
+    </code>
+    <h3>Herencia de plantillas</h3>
+    <p>Pasamos todo lo que se repite, para ello analicemos el siguiente ejemplo:</p>
+    <code>
+        {{ <u>define</u> "header" }} &larr; <b>define</b> "NomBloque"<br>
+            &lt;header&gt;
+                Contenido html
+            &lt;/header&gt; <br>
+        {{ end }}
+        <p>Despues de agregar el nuevo archivo con los atributos al codigo de go (index.html, base.html) procedemos a invovarlo en la pagina principal ({{template "NomBloque"}}</p> &larr; heredará el contenido del bloque
+    </code>
+
+    <h3>Funcion must (libreria template)</h3>
+    
+
+</div>
+<div class="gui">
+    <h2>Interfaces graficas GUI</h2>
+    <p>Para la creacion de una interfaz grafica hacemos uso del paquete <b>fyne</b>. Para preparar el entorno seguimos las instrucciones de este <a href="https://developer.fyne.io/started/" target="_blank" rel="noopener noreferrer">blog</a>. En caso de error al momento de hacer la instalacion del paquete hacer la instalacion como si fuese la version 1.16 de Go</p>
+    <p>Creamos una instancia dentro de la funcion principal que hace referencia a la aplicacion</p>
+    <code>
+        func main() {<br>
+        &emsp;&emsp;&emsp;myApp := app.New()<br>
+        &emsp;&emsp;&emsp;myWindow:= myApp.NewWindow("Titulo de la ventanta")<br>
+        &emsp;&emsp;&emsp;myWindow.SetContent(widget.NewLabel("Hola mundo"))<br>
+        &emsp;&emsp;&emsp;myWindow.ShowAndRun()<br>
+        }
+    <p>Como resultado tendremos:</p><img src="../source/Go/img/ResGui1.jpg" alt="">
+    </code>
+    
+</div>
+</body>
+</html>
