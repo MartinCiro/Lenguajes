@@ -382,11 +382,22 @@
         &emsp;&emsp;&emsp;myApp := app.New()<br>
         &emsp;&emsp;&emsp;myWindow:= myApp.NewWindow("Titulo de la ventanta")<br>
         &emsp;&emsp;&emsp;myWindow.SetContent(widget.NewLabel("Hola mundo"))<br>
-        &emsp;&emsp;&emsp;myWindow.ShowAndRun()<br>
+        &emsp;&emsp;&emsp;myWindow.ShowAndRun()<br> //para hacer que carge la ventana
         }
     <p>Como resultado tendremos:</p><img src="../source/Go/img/ResGui1.jpg" alt="">
     </code>
-    
+    <p>Para compilar una aplicacion hacemos uso del comando "fyne package -os android -appID Nombre.App.Name"</p>
+    <p>Para cambiar el color por defecto usamos las propiedades fyne/v2/theme y hacemos llamado: myApp.Settings().SetTheme(theme.LightTheme())</p>
+    <h3>Crear una nueva ventana</h3>
+    <p>myWindow := myApp.NewWindow("Titulo") //set title</p>
+    <h3>Asignar dimencion</h3>
+    <p>myWindow.Resize(fyne.NewSize(500, 100)) //width, height</p>
+    <h3>Añadir un texto simple</h3>
+    <p>myWindow.SetContent(widget.NewLabel("text"))</p>
+    <h3>Creacion de un boton</h3>
+    <p>btn := widget.NewButton("button name", func ()  {ComportamientoQueTendraAlPulsar}) //crea el boton</p>
+    <h3>Asignar color a la letra</h3>
+    <p>Para ello hacemos uso de la propiedad <b>Canvas</b> <b>import "fyne.io/fyne/v2/canvas"</b> textX := canvas.NewText("Texto con color", color.NRGBA{R:0, G:0, B:0,A: 255})//Insert color</p>
 </div>
 </body>
 </html>
