@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://martinciro.github.io/Lenguajes/lenguajes/source/python/img/python.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Python</title>
 </head>
@@ -12,27 +13,68 @@
 <body>
     <h1>Python</h1>
     <p>Es un lenguaje de tipado dinamico, es decir, no es necesario declarar el tipo de dato</p>
-    
-    <div id="vrb">
-        <h3>Variables</h3>
-    <code>
-        <b>a="5"</b> -> 'a' es una variable tipo string<br>
-        <b>a=5 -></b> 'a' es una variable tipo int
-    </code>
+    <div id="programador">
+        <img src="https://i.pinimg.com/originals/08/0f/c6/080fc6b285e3469f1a824d7cbf25f0f1.jpg" alt="programador">
+        <p>Todo parece imposible hasta que se hace. <d style="font-size: 10px;">Nelson Mandela</d></p>
     </div>
-    <div id="ope">
-        <h3>Operaciones</h3>
-        <p>Se maneja con el metodo PEMDAS (Parentish, Exponente, Multiplicacion, Division, Adicion, Abstraccion)</p>
-    <code>
+    <div class="cuerpo">
+        <div id="var">
+            <h3>Variables</h3>
+            <div id="erase">
+                <code>
+            <b>a="5"</b> -> 'a' es una variable tipo string<br>
+            <b>a=5 -></b> 'a' es una variable tipo int
+            </code>
+            </div>
+        </div>
+        <div id="cap">
+            <h3>Captura de datos por teclado</h3>
+            <div id="erase">
+                <p>Esto se hace con <strong>input</strong> y todo será almacenado como texto, despues es necesario
+                    <u>convertir</u> el valor al tipo de dato necesitado(<a href="#">Ir a conversion de datos</a>)
+                </p>
+                <code>
+                    <b>input("Mensaje a mostrar: ")</b> -> 'Mensaje a mostrar' (Si el valor no es asignado a una variable será solo un mensaje en pantalla)<br>
+                    <b>b = input("Mensaje a mostrar: ")</b> -> 'Mensaje a mostrar' (El valor <strong>ingresado </strong>por teclado es asignado a una variable llamada <b>b</b>, accedemos al valor usando algún método de impresión o lo empleamos en una operación)<br>
+                </code>
+            </div>
+        </div>
+        <div id="prin">
+            <h3>Impresion de mensajes</h3>
+            <div id="erase">
+                <p>Usamos la palabra reservada <u>print</u> y si queremos que imprima el mensaje con un salto de linea
+                    Usamos
+                    <u>println</u>, para versiones como la 2 e inferiores debemos hacer uso de
+                    <strong>parentesis</strong>
+                </p>
+                <code>
         <b>print 2 + 3 * 4 ** 2/ (5-1)</b> -> 26.0
     </code>
-    </div>
-    <div id="fn">
-        <h3>Operaciones</h3>
-        <p>Se maneja con el metodo PEMDAS (Parentish, Exponente, Multiplicacion, Division, Adicion, Abstraccion)</p>
-    <code>
-        <b>print 2 + 3 * 4 ** 2/ (5-1)</b> -> 26.0
-    </code>
+            </div>
+        </div>
+        <div id="ope">
+            <h3>Orden de operaciones</h3>
+            <div id="erase">
+                <p>Se maneja con el método PEMDAS (Parentish, Exponente, Multiplicacion, Division, Adicion, Abstraccion)
+                </p>
+                <code>
+                    <b>print 2 + 3 * 4 ** 2/ (5-1)</b> -> 26.0
+                </code>
+            </div>
+        </div>
+        <div id="comple">
+            <h3>Complementos</h3>
+            <div id="erase">
+                <ul>
+                    <li>
+                        <h4>Tipo de dato</h4>
+                        <p>Obtenemos el tipo del dato con <strong>type(<u>NomVariable</u>)</strong>. Este nos dará en
+                            que
+                            formato está asignada la variable</p><code>print type(a)-> 'string'</code>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 
